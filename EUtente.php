@@ -13,8 +13,7 @@ class EUtente {
     public $via;
     public $CAP;
     public $citta;
-    public $codice_attivazione;
-    public $stato='non_attivo';
+ 
     /**
      * @AssociationType Entity.EOrdine
      * @AssociationMultiplicity 0..*
