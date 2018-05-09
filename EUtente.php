@@ -8,7 +8,6 @@ class EUtente {
     public $nome;
     public $cognome;
     public $username;
-    public $password;
     public $email;
     public $via;
     public $CAP;
