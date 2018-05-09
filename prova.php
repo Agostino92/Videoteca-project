@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 
 $x= 2;
 
-print("ciao mondo\n");
+print("ciao claudio\n");
 
 define("CONSTANT", "Hello.");
 echo CONSTANT; // outputs hello
