@@ -2,7 +2,7 @@
 
 $x= 2;
 
-print("ciao mondo\n");
+print("ciao agostino\n");
 
 define("CONSTANT", "Hello.");
 echo CONSTANT; // outputs hello
