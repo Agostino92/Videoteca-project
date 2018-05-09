@@ -1,7 +1,8 @@
-<?php
+﻿<?php
 
 $x= 2;
 
+<<<<<<< HEAD
 print("ciao agostino\n");
 
 define("CONSTANT", "Hello.");
