@@ -12,7 +12,6 @@ class EUtente {
     public $email;
     public $via;
     public $CAP;
-    public $citta;
  
     /**
      * @AssociationType Entity.EOrdine
