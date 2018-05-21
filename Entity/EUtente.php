@@ -1,5 +1,5 @@
 <?php
-public class Utente extends Persona { 
+public class EUtente extends EPersona { 
 /**
 *Utente eredita variabili e metodi da Persona
 */

@@ -1,6 +1,6 @@
 <?php
 
-class Film {
+class EFilm {
     public $titolo;
     public $regista;
 	public $attore;
