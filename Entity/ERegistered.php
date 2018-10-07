@@ -4,8 +4,8 @@
 
 class ERegistered extends EUser
 {
-   /** il nickname dell'utente */
-    protected $nickname; 
+   /** l'username dell'utente */
+    protected $username; 
     /** la e-mail dell'utente */
     protected $email; 
     /** la password dell'utente */
@@ -14,21 +14,21 @@ class ERegistered extends EUser
     function __construct()
     {
         parent::__construct();
-		$this->nickname='';
+		$this->username='';
 		$this->email='';
 		$this->password='';
     }
    
-   /**set nickname dell'utente */
-    function setNickName (string $nickname)
+   /**set username dell'utente */
+    function setUsername (string $username)
     {
-        $this->nickname = $nickname;
+        $this->username = $username;
 	}
 	
-	/**get nickname dell'utente */
-    function getNickName () : string
+	/**get username dell'utente */
+    function getUsername () : string
     {
-        return $this->nickname;
+        return $this->username;
     }
     	
     /**set mail dell'utente */
