@@ -1,0 +1,51 @@
+body 
+{
+	background-color: RebeccaPurple;
+	background-image: url("https://pre00.deviantart.net/47a1/th/pre/i/2015/177/1/2/lulu_and_bard_by_dakun87-d8ysub2.jpg"); 
+	background-position: 50% 85%;
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover; /* per garantire compatibilità cross-browser */
+	-moz-background-size: cover; 
+	-o-background-size: cover; 
+}
+
+a { color: blue;}
+
+ ul {
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+}
+
+/*input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+} */
+.well 
+{ 
+	background-color:rgba(70, 17, 81, 0.5);
+	border-style: solid;
+    border-radius: 30px;
+        color: white;
+        font-family: "Georgia", Monaco, monospace; 
+	font-size: 18px;
+}
+
+.well a {  color: #1E90FF; }
+
+#important
+{
+  color: white;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+ .well tr:hover {background-color: #DCDCDC;}
+
