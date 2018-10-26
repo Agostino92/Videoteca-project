@@ -1,5 +1,5 @@
 --
--- Struttura tabella for table `utente`
+-- Struttura tabella `utente`
 --
 
 CREATE TABLE IF NOT EXISTS `utente`
@@ -26,6 +26,9 @@ INSERT INTO `utente` (`username`, `firstname`, `lastname`, `password`, `email`, 
 ('fra1996','francesco','mascitti','cisket96','framascitti@gmail.it','1996-06-03','Torino');
 
 
+--
+-- Struttura tabella `film`
+--
 
 
 CREATE TABLE IF NOT EXISTS `film` 
