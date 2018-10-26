@@ -15,7 +15,7 @@ class CUser
             $user = CSession::getUserFromSession();
             if(get_class($user)!=EGuest::class) // se l'utente non è guest, non puo accedere al login
             {
-                $vUser->showErrorPage($user, 'Why are you doing this? Yuo\'re already logged!');
+                $vUser->showErrorPage($user, 'Cosa stai cercando di fare? Hai già effettuato il login!');
             }
             else
                 $vUser->showLogin();
@@ -35,7 +35,7 @@ class CUser
             $vUser = new VUser();
             $user = CSession::getUserFromSession();
             if (get_class($user)!=EGuest::class) // se l'utente non è guest, non puo accedere al login
-                $vUser->showErrorPage($user, 'Why are you doing this? Yuo\'re already logged!');
+                $vUser->showErrorPage($user, 'Cosa stai cercando di fare? Hai già effettuato il login!');
             else
                 $vUser->showSignUp();
         }
@@ -49,7 +49,7 @@ class CUser
     static function logout()
     {
         CSession::destroySession();
-        header('Location: /deepmusic/home');
+        header('Location: /videoteca-project/home');
     }
               
     /**
