@@ -1,6 +1,5 @@
 <?php
-require_once 'SmartyConfig.php';
-$smarty = SmartyConfig::configure();
+require_once 'req.php';
 
 if(CSession::checkPopulateApplication())
 {

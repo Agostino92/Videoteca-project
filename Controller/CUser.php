@@ -1,6 +1,6 @@
 <?php
 
-require_once 'inc.php';
+require_once 'req.php';
 
 /*La classe CUser permettone la creazione, autenticazione e visualizzazione di un profilo di un utente.*/
 class CUser
