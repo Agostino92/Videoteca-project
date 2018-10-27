@@ -12,10 +12,8 @@ class EUser
     private $birthDate;            
 	   
      /** Costruisce un oggetto EUserInfo vuoto */
-    function __construct()
+    function __construct($firstName, $lastName, $birthPlace, $birthDate)
     {
-        parent::__construct();
-        
         $this->firstName='';
         $this->lastName='';
         $this->birthPlace='';

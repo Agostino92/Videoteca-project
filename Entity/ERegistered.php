@@ -11,10 +11,9 @@ class ERegistered extends EUser
     /** la password dell'utente */
     protected $password; 
 	
-    function __construct()
+    function __construct($username, $email, $password)
     {
-        parent::__construct();
-		$this->username='';
+        $this->username='';
 		$this->email='';
 		$this->password='';
     }
