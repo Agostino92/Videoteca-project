@@ -1,0 +1,13 @@
+#verifica se il modulo rewrite è attivo in Apache [se non lo fosse causerebbe crash]
+<IfModule mod_rewrite.c> 
+#reindirizzamento da HTTP a HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteEngine on
+#se il file richiesto non esiste, reindirizza a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . /videoteca-project/index.php [L]
+
+</IfModule>
