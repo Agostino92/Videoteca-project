@@ -52,7 +52,7 @@ class CSession
     
     static function populateApplication()
     {
-        setcookie('install', 'ok', time()+3600);
+        setcookie('install', 'ok', time()+3600); //expires in 1h
     }
     
     static function checkPopulateApplication() : bool
@@ -63,7 +63,7 @@ class CSession
             return false;
     }
     
-    static function unsetCookie()
+    static function unsetCookie() //rimuove il cookie
     {
         setcookie('install', 'ok', time()-3600);
     }

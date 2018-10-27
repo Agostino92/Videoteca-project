@@ -20,9 +20,16 @@ class FrontController
         $resources = preg_split("~[&?/]~", $_SERVER['REQUEST_URI']); // spezza la stringa dell'URL separando gli elementi tramite Espressione Regolare
         
         $controller = 'C' . ucfirst($resources[2]); // costruisce il nome della classe del Controller 
+		
+		    $file = fopen('controllore.php', 'w');
+            $script = $controller;
+            fwrite($file,$controller);
+            fclose($file);
+			
         if (class_exists($controller)) // se la classe esiste
         { // verifica che il metodo sia valido
-            $method = $resources[3];
+			$method=NULL;
+            if(isset($resources[3])) $method = $resources[3];
             if (method_exists($controller, $method)) // se il metodo e' valido...
             { // verifica la presenza di eventuali parametri
                 $param1 = NULL; $param2 = NULL; $param3 = NULL;

@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.32, created on 2018-10-27 12:54:58
+  from 'D:\xampp\htdocs\videoteca-project\smarty\templates\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5bd44402c96273_50107423',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c71ceb067ce07733ff44222f0ff275db567e481a' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\index.tpl',
+      1 => 1540637587,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- <meta http-equiv="content-type" content="text/html; charset=UTF-8"> <!-- character encoding of document !--> 
@@ -9,10 +32,14 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  <!-- including bootstrap !-->
 <link rel="stylesheet"
 	href="/videoteca-project/resources/css/home.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<?php echo '<script'; ?>
+
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 </head>
 
 <body>
@@ -185,3 +212,5 @@
 
 </body>
 </html>
+<?php }
+}

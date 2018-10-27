@@ -4,7 +4,7 @@ require_once 'req.php';
 if(CSession::checkPopulateApplication())
 {
     CSession::unsetCookie();
-    header('Location: /Videoteca-project/index');
+    header('Location: /videoteca-project/index');
     //SampleUsers::generateUserPool(3, 3, 3);
     
 }
@@ -15,6 +15,6 @@ elseif(file_exists('config.inc.php'))
 }
 elseif(Installation::makeInstallation()){
     CSession::populateApplication();
-    header('Location: /Videoteca-project/index'); // redirect verso l'applicazione
+    header('Location: /videoteca-project/index'); // redirect verso l'applicazione
 }
 ?>
