@@ -1,8 +1,6 @@
 <?php
-require_once 'req.php';
-include_once 'Entity/EObject.php';
 
-class EUser extends EObject
+class EUser 
 {
     /** il nome dell'utente */
     private $firstName;         
