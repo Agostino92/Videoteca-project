@@ -1,5 +1,5 @@
 <?php
-require_once 'inc.php';
+require_once 'req.php';
 
 /*La classe CSession regola la sessione dell'utente nella navigazione dell'applicazione.
  * Le sue funzionalità permettono di iniziare, terminare e riprendere una sessione di un utente*/
