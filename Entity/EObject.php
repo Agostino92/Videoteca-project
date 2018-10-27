@@ -1,7 +1,7 @@
 <?php
 require_once 'req.php';
 
-/*La classe EObject caratterizza un oggetto Entity a partire dal suo Id.*/
+/*La classe EObject caratterizza un oggetto Entity a partire dal suo Id*/
 class EObject
 {
     /*l'id che identifica l'oggetto.*/
