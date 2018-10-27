@@ -1,5 +1,5 @@
 <?php
-require_once 'inc.php';
+require_once 'req.php';
 include_once 'View/VObject.php';
 
 /*La classe VUser si occupa dell'input-output per quanto riguarda la gestione di un utente.*/
