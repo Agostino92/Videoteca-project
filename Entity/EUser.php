@@ -12,7 +12,7 @@ class EUser
     private $birthDate;            
 	   
      /** Costruisce un oggetto EUserInfo vuoto */
-    function __construct($firstName, $lastName, $birthPlace, $birthDate)
+    function __construct()
     {
         $this->firstName='';
         $this->lastName='';
