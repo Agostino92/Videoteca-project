@@ -1,4 +1,6 @@
 <?php
+require_once 'req.php';
+include_once 'Entity/EObject.php';
 
 /** La classe ERegistered estende la classe padre EUser e implementa la tipologia di utente Registrato */
 
