@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#sfoglia">SFOGLIA</a></li>
         <li><a href="#forum">FORUM</a></li>
-        <li><a href="#accedi">ACCEDI</a></li>
+        <li><a href="/videoteca-project/user/login">ACCEDI</a></li>
         <li><a href="#registrati">REGISTRATI</a></li>
       </ul>
     </div>

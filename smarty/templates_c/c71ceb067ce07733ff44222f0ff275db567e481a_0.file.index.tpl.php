@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-10-27 12:54:58
+/* Smarty version 3.1.32, created on 2018-10-28 11:25:37
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bd44402c96273_50107423',
+  'unifunc' => 'content_5bd58ea138f8c0_30861542',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c71ceb067ce07733ff44222f0ff275db567e481a' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\index.tpl',
-      1 => 1540637587,
+      1 => 1540722319,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bd58ea138f8c0_30861542 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,13 +52,13 @@ function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl)
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#"><img src="resources/img/prova.png" alt="logo"></a>
+      <a class="navbar-brand" href="#"><img src="https://i.imgur.com/9idmjQq.png" alt="logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#sfoglia">SFOGLIA</a></li>
         <li><a href="#forum">FORUM</a></li>
-        <li><a href="#accedi">ACCEDI</a></li>
+        <li><a href="/videoteca-project/user/login">ACCEDI</a></li>
         <li><a href="#registrati">REGISTRATI</a></li>
       </ul>
     </div>
@@ -76,7 +76,7 @@ function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl)
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="resources/img/carousel1.png" alt="WWS" width="1200" height="400">
+        <img src="https://i.imgur.com/o1uoYkX.png" alt="WWS" width="1200" height="400">
         <div class="carousel-caption">
           <h2><a href="http://estiloasertivo.blogspot.com.es/">The wolf of Wall Street</a></h2>
           <h5><a href="http://estiloasertivo.blogspot.com.es/">"Commedia nera e stupefacente senza redenzione, brillante analisi antropologica sull'avidità"</a></h5>
@@ -85,7 +85,7 @@ function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl)
       </div>
 
       <div class="item">
-        <img src="resources/img/carousel2.png" alt="8ful 8" width="1200" height="400">
+        <img src="https://i.imgur.com/VZSLHSy.jpg" alt="8ful 8" width="1200" height="400">
         <div class="carousel-caption">
           <h2>The hateful eight</h2>
           <h5>"Sceneggiatura sapiente e ottimi dialoghi nell'ultima opera vincente di Tarantino."</h5>
@@ -94,7 +94,7 @@ function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl)
       </div>
     
       <div class="item">
-        <img src="resources/img/carousel3.png" alt="NGNL0" width="1200" height="400">
+        <img src="https://i.imgur.com/LU9S1xY.jpg" alt="NGNL0" width="1200" height="400">
         <div class="carousel-caption">
           <h2>No Game No Life Zero</h2>
           <h5>"Coinvolgente, romantico e commovente. Non perderti questo capolavoro dell'animazione!"</h5>
@@ -123,7 +123,7 @@ function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl)
     <div class="col-sm-6">
 	   <div class="row">
 	      <div class="media col-md-3 col-md-offset-1">           
-              <img class="media-object img-rounded img-responsive"  src="resources/img/dju.jpg" alt="DjUnch" >            
+              <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/pTWFyRY.jpg" alt="DjUnch" >            
           </div>
           <div class="col-md-6">
             <h4 class="list-group-item-heading"></br>Django unchained</h4>          
@@ -131,7 +131,7 @@ function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl)
        </div> </br>
 	   <div class="row">
 	      <div class="media col-md-3 col-md-offset-1">
-              <img class="media-object img-rounded img-responsive"  src="resources/img/aveng.jpg" alt="DjUnch" >
+              <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/bVsEMIX.jpg" alt="DjUnch" >
           </div>
           <div class="col-md-6">
             <h4 class="list-group-item-heading"></br>Avengers: Infinity War</p>
@@ -193,7 +193,7 @@ function content_5bd44402c96273_50107423 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 
 <footer class="text-center"> <br>
-  <div class="col-sm-4 "></br></br><img src="resources/img/if.png" alt="IF" id="IF">
+  <div class="col-sm-4 "></br></br><img src="https://i.imgur.com/yKodUR4.png" alt="IF" id="IF">
   </div>
   <div class="col-sm-4 ">
   <h5>Chi siamo</h5>
