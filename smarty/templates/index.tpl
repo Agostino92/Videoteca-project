@@ -25,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#"><img src="resources/img/prova.png" alt="logo"></a>
+      <a class="navbar-brand" href="#"><img src="https://i.imgur.com/9idmjQq.png" alt="logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -49,7 +49,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="resources/img/carousel1.png" alt="WWS" width="1200" height="400">
+        <img src="https://i.imgur.com/o1uoYkX.png" alt="WWS" width="1200" height="400">
         <div class="carousel-caption">
           <h2><a href="http://estiloasertivo.blogspot.com.es/">The wolf of Wall Street</a></h2>
           <h5><a href="http://estiloasertivo.blogspot.com.es/">"Commedia nera e stupefacente senza redenzione, brillante analisi antropologica sull'avidità"</a></h5>
@@ -58,7 +58,7 @@
       </div>
 
       <div class="item">
-        <img src="resources/img/carousel2.png" alt="8ful 8" width="1200" height="400">
+        <img src="https://i.imgur.com/VZSLHSy.jpg" alt="8ful 8" width="1200" height="400">
         <div class="carousel-caption">
           <h2>The hateful eight</h2>
           <h5>"Sceneggiatura sapiente e ottimi dialoghi nell'ultima opera vincente di Tarantino."</h5>
@@ -67,7 +67,7 @@
       </div>
     
       <div class="item">
-        <img src="resources/img/carousel3.png" alt="NGNL0" width="1200" height="400">
+        <img src="https://i.imgur.com/LU9S1xY.jpg" alt="NGNL0" width="1200" height="400">
         <div class="carousel-caption">
           <h2>No Game No Life Zero</h2>
           <h5>"Coinvolgente, romantico e commovente. Non perderti questo capolavoro dell'animazione!"</h5>
@@ -96,7 +96,7 @@
     <div class="col-sm-6">
 	   <div class="row">
 	      <div class="media col-md-3 col-md-offset-1">           
-              <img class="media-object img-rounded img-responsive"  src="resources/img/dju.jpg" alt="DjUnch" >            
+              <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/pTWFyRY.jpg" alt="DjUnch" >            
           </div>
           <div class="col-md-6">
             <h4 class="list-group-item-heading"></br>Django unchained</h4>          
@@ -104,7 +104,7 @@
        </div> </br>
 	   <div class="row">
 	      <div class="media col-md-3 col-md-offset-1">
-              <img class="media-object img-rounded img-responsive"  src="resources/img/aveng.jpg" alt="DjUnch" >
+              <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/bVsEMIX.jpg" alt="DjUnch" >
           </div>
           <div class="col-md-6">
             <h4 class="list-group-item-heading"></br>Avengers: Infinity War</p>
@@ -166,7 +166,7 @@
 </div>
 
 <footer class="text-center"> <br>
-  <div class="col-sm-4 "></br></br><img src="resources/img/if.png" alt="IF" id="IF">
+  <div class="col-sm-4 "></br></br><img src="https://i.imgur.com/yKodUR4.png" alt="IF" id="IF">
   </div>
   <div class="col-sm-4 ">
   <h5>Chi siamo</h5>
