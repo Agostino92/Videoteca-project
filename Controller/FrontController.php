@@ -23,7 +23,8 @@ class FrontController
 		
 		    $file = fopen('controllore.php', 'w');
             $script = $controller;
-            fwrite($file,$controller);
+            //fwrite($file,$controller);
+			fwrite($file,print_r($resources, TRUE));
             fclose($file);
 			
         if (class_exists($controller)) // se la classe esiste

@@ -13,7 +13,8 @@ class ERegistered extends EUser
 	
     function __construct()
     {
-        $this->username='';
+        parent::__construct();
+		$this->username='';
 		$this->email='';
 		$this->password='';
     }
