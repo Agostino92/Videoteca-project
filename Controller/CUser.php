@@ -85,5 +85,44 @@ class CUser
         else
             $vUser->showSignUp();
     }
+	
+	/*La funzione Authentication verifica che le credenziali di accesso inserite da un utente siano corrette: in tal caso, 
+	l'applicazione lo riporterà verso la sua pagina, altrimenti restituirà la schermata di login, con un messaggio di errore*/
+    private function authentication()
+    {
+        $vUser = new VUser();
+        $loggedUser = $vUser->createUser();
+        
+        if($vUser->validateLogin($loggedUser))
+        {
+            $authenticated = false; // bool per l'autenticazione
+            
+            $userId = FPersistantManager::getInstance()->exists(EUser::class, FTarget::EXISTS_NICKNAME, $loggedUser->getNickName()); // verifica che l'utente inserito matchi nel db
+            
+            if($userId) // se e' stato prelevato un id...
+            {
+                
+                $loggedUser->setId($userId); // viene assegnato all'utente l'user id
+                
+                if($loggedUser->checkPassword()) // se la password e' corretta
+                {
+                    unset($loggedUser); // istanza utilizzata per il login viene rimossa
+                    $user = FPersistantManager::getInstance()->load(EUser::class, $userId); // viene caricato l'utente
+                    
+                    $authenticated = true; // l'utente e' autenticato
+                    
+                    CSession::startSession($user);
+                    
+                    header('Location: /Videoteca-project/index');
+                }
+            }
+            
+            if(!$authenticated)
+                $vUser->showLogin(true);
+                
+        }
+        else
+            $vUser->showLogin();
+    }
 }
 
