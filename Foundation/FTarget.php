@@ -5,9 +5,9 @@
  * 
  * La classe FTarget contiene stringhe da utilizzare come parametro per FPersistantManager 
  * per specificare, in funzionalita come load o exists, i tipi di query che si vogliono
- * utilizzare per una data classe. In particolare:
+ * utilizzare per una data classe. In particolare per la classe EUser.
  * 
- * EUser supporta:
+ * EUser supporta infatti:
  * 
  *  - EXISTS_NICKNAME
  *  - EXISTS_MAIL
@@ -15,11 +15,7 @@
  *  - LOAD_FILMLIST
  *
  *  
- * EFilm supporta:
  * 
- *  - EXISTS_FILM
- *   
- *  
  *
  */
 class FTarget
@@ -34,6 +30,7 @@ class FTarget
     const EXISTS_MAIL = 'Mail'; 
     /** verifica che un utente non esiste già */
     const EXISTS_USER = 'User';
+	
     
 }
 
