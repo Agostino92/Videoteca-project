@@ -15,9 +15,9 @@ CREATE TABLE IF NOT EXISTS `users`
   
 
 
-/*Dump dei dati per la tabella `utente`*/
+/*Dump dei dati per la tabella `users`*/
 
-INSERT INTO `utente` (`id`, `nickname`, `mail`, `password`) VALUES 
+INSERT INTO `users` (`id`, `nickname`, `mail`, `password`) VALUES 
 ('1','iltac','tonino.taccone@gmail.com', 'taccone92'),
 ('2','amecav','americocav93@hotmail.it','cavassini92'),
 ('3','marossi','mariorossi@gmail.com','rossim95'),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 /*Dump dei dati per la tabella `user_info`*/
 
 INSERT INTO `user_info` (`id`, `firstname`, `lastname`, `birthplace`,`birthdate`, `bio`) VALUES 
-('1','Tonino','Taccone', 'Roma','1992-03-32','niente'),
+('1','Tonino','Taccone', 'Roma','1992-03-12','niente'),
 ('2','Americo','Cavasinni','Milano','1992-06-11','niente'),
 ('3','Mario','Rossi','Napoli','1993-09-13','niente'),
 ('4','Francesco','Natale','Avezzano','1999-08-23','niente');
@@ -77,7 +77,7 @@ INSERT INTO `film` (`codice`, `name`, `author`, `genre`, `descrizione`, `locandi
 
 ALTER TABLE `user_info`
   ADD CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
+
 
 /*
 CREATE TABLE `cartacredito` (
