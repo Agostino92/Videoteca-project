@@ -18,11 +18,11 @@ CREATE TABLE IF NOT EXISTS `users`
 
 /*Dump dei dati per la tabella `users`*/
 
-INSERT INTO `users` (`id`, `nickname`, `mail`, `password`) VALUES 
-('1','iltac','tonino.taccone@gmail.com', 'taccone92'),
-('2','amecav','americocav93@hotmail.it','cavassini92'),
-('3','marossi','mariorossi@gmail.com','rossim95'),
-('4','fra1996','framascitti@gmail.it','francesco96');
+INSERT INTO `users` (`id`, `nickname`, `type`, `mail`, `password`) VALUES 
+('1','iltac','utente','tonino.taccone@gmail.com', 'taccone92'),
+('2','amecav','utente','americocav93@hotmail.it','cavassini92'),
+('3','marossi','utente','mariorossi@gmail.com','rossim95'),
+('4','fra1996','utente','framascitti@gmail.it','francesco96');
 
 /*Struttura tabella `user_info` */
 
