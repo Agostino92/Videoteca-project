@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `users`
   `mail` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
   UNIQUE KEY `mail` (`mail`),
   UNIQUE KEY `nickname` (`nickname`)
   )ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
