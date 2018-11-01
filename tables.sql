@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS `users`
 (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nickname` varchar(50) DEFAULT NULL,
+  `type` set('utente','moderatore') NOT NULL,
   `mail` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   
