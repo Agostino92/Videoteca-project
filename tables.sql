@@ -1,31 +1,47 @@
 
-/*Struttura tabella `utente` */
+/*Struttura tabella `users` */
 
-
-CREATE TABLE IF NOT EXISTS `utente`
+CREATE TABLE IF NOT EXISTS `users`
 (
-    `username` varchar(20) NOT NULL,
-    `firstname` varchar(40) DEFAULT NULL,
-    `lastname` varchar(40) DEFAULT NULL,
-    `password` char(32) DEFAULT NULL,
-    `email` varchar(80) DEFAULT NULL,
-    `birthDate` DATE NOT NULL,
-    `birthPlace` varchar(30) NOT NULL,
-    PRIMARY KEY (`username`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(50) DEFAULT NULL,
+  `mail` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  
+  PRIMARY KEY (`id`)
+  UNIQUE KEY `mail` (`mail`),
+  UNIQUE KEY `nickname` (`nickname`)
+  )ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
   
 
 
 /*Dump dei dati per la tabella `utente`*/
 
+INSERT INTO `utente` (`id`, `nickname`, `mail`, `password`) VALUES 
+('1','iltac','tonino.taccone@gmail.com', 'taccone92'),
+('2','amecav','americocav93@hotmail.it','cavassini92'),
+('3','marossi','mariorossi@gmail.com','rossim95'),
+('4','fra1996','framascitti@gmail.it','francesco96');
 
-INSERT INTO `utente` (`username`, `firstname`, `lastname`, `password`, `email`, `birthDate`, `birthPlace`) VALUES 
-('iltac','tonino','taccone','tonino92', 'tonino.taccone@gmail.com', '1992-08-20','Roma'),
-('amecav','americo','cavasinni','amer93','americocav93@hotmail.it','1993-03-18', 'Milano'),
-('marossi','mario','rossi','gatto95','mariorossi@gmail.com','1995-09-13','Napoli'),
-('fra1996','francesco','mascitti','cisket96','framascitti@gmail.it','1996-06-03','Torino');
+/*Struttura tabella `user_info` */
 
+CREATE TABLE IF NOT EXISTS `user_info` (
+  `id` smallint(5) UNSIGNED NOT NULL,
+  `firstname` varchar(30) DEFAULT NULL,
+  `lastname` varchar(30) DEFAULT NULL,
+  `birthplace` varchar(30) DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
+  `bio` char(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+/*Dump dei dati per la tabella `user_info`*/
+
+INSERT INTO `user_info` (`id`, `firstname`, `lastname`, `birthplace`,`birthdate`, `bio`) VALUES 
+('1','Tonino','Taccone', 'Roma','1992-03-32','niente'),
+('2','Americo','Cavasinni','Milano','1992-06-11','niente'),
+('3','Mario','Rossi','Napoli','1993-09-13','niente'),
+('4','Francesco','Natale','Avezzano','1999-08-23','niente');
 
 /*Struttura tabella `film` */
 
@@ -33,21 +49,21 @@ INSERT INTO `utente` (`username`, `firstname`, `lastname`, `password`, `email`, 
 
 CREATE TABLE IF NOT EXISTS `film` 
 (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `codice` int NOT NULL AUTO_INCREMENT,
   `name` varchar(40) DEFAULT NULL,
   `author` varchar(30) DEFAULT NULL,
   `genre` varchar(30) DEFAULT NULL,
   `descrizione` varchar(2048) NOT NULL,
   `locandina` varchar(256) DEFAULT NULL,
   `tipo` varchar(10) DEFAULT NULL,
-   PRIMARY KEY (`id`)
+   PRIMARY KEY (`codice`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 /*Dump dei dati per la tabella `film` */
 
 
-INSERT INTO `film` (`id`, `name`, `author`, `genre`, `descrizione`, `locandina`, `tipo`) VALUES
+INSERT INTO `film` (`codice`, `name`, `author`, `genre`, `descrizione`, `locandina`, `tipo`) VALUES
 ('1', 'The Wolf of Wall Street', 'Martin Scorsese', 'Drammatico' , 'Il film narra l''ascesa e la caduta di Jordan Bellfort, spregiudicato broker newyorkese interpretato da Leonardo Di Caprio, fulcro della pellicola è la descrizione della sua vita, fatta di eccessi e vizi che lo porteranno poi a una rovinosa caduta.', '../resources/immagini_db/thewolf.jpg', 'jpeg'),
 ('2', 'The Hateful Eight', 'Quentin Tarantino', 'Western', 'Alcuni anni dopo la fine della guerra civile il cacciatore di taglie John Ruth chiamato "il boia" , scorta la latitante Daisy Domergue. Nel corso del loro viaggio incontrano due sconosciuti: il Maggiore Marquis Warren, ex soldato diventato cacciatore di taglie e Chris Mannix, un rinnegato del Sud che afferma di essere il nuovo sceriffo della città. A causa di una tormenta di neve sono tutti costretti a rifugiarsi in un negozio chiamato "Minnie", dove con l''inganno, vengono attirati in un terreno molto pericoloso.', '../resources/immagini_db/hatefuleight.jpg','jpeg'),
 ('3', 'No game no life zero', 'Yu Kamiya', 'Fantasy', 'Capitolo della serie No Game no Life, che ha come protagonisti il fratello e sorella Sora e Shiro, due NEET imbattibili in qualsiasi gioco. Sono conosciute nel mondo videoludico come i Senza Nome. Un giorno ricevono una misteriosa sfida a scacchi da un utente anonimo, accettano la sfida ma, al termine della scontro, gli viene posta una domanda che cambierà per sempre il loro destino.', '../resources/immagini_db/nogamenolife.jpg', 'jpeg'),
@@ -57,7 +73,11 @@ INSERT INTO `film` (`id`, `name`, `author`, `genre`, `descrizione`, `locandina`,
 ('7', 'Steins Gate', 'Kanji Wakabayashi', 'Fantasy', 'Il film è ambientato un anno dopo gli avvenimenti della serie televisiva,i protagonisti vivono nella linea temporale Steins Gate, ma Okabe continua ad avere nella sua mente dei deja vu delle linee temporali alfa e beta. La sua capacità di avere il reading steiner fa si che l''esistenza di Okabe sia parallela alle due linee e venga negata nella linea Steins Gate. Cosi Okabe svanisce nel nulla e nessuno si ricorda della sua esistenza.','../resources/immagini_db/steinsgate.jpg','jpeg'); 
 
 
+/* Constraints for table `user_info` */
 
+ALTER TABLE `user_info`
+  ADD CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*
 CREATE TABLE `cartacredito` (
