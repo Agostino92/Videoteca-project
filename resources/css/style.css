@@ -49,3 +49,65 @@ a { color: blue;}
 
  .well tr:hover {background-color: #DCDCDC;}
 
+  
+.navbar {
+    padding-top: 7px;
+	padding-right: 7px;
+    margin-bottom: 20px;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.95;
+
+}
+
+.navbar-brand {
+margin-top: -18px;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+	text-shadow: 1px 1px 2px RebeccaPurple, 0 0 25px RebeccaPurple, 0 0 5px RebeccaPurple;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}  
+
+  @media (max-width: 600px) {
+	.navbar-brand img {
+      content:url("https://i.imgur.com/cS09NaU.png");
+	  margin-top: 4px;
+	  margin-left: 3px;
+	}
+  }

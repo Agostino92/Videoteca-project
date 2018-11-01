@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-10-28 11:25:37
+/* Smarty version 3.1.32, created on 2018-11-01 15:38:18
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bd58ea138f8c0_30861542',
+  'unifunc' => 'content_5bdb0fda86efe3_32825443',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c71ceb067ce07733ff44222f0ff275db567e481a' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\index.tpl',
-      1 => 1540722319,
+      1 => 1541083096,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5bd58ea138f8c0_30861542 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bdb0fda86efe3_32825443 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,26 +45,8 @@ function content_5bd58ea138f8c0_30861542 (Smarty_Internal_Template $_smarty_tpl)
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <!-- collapses bar on smaller screens !-->
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#"><img src="https://i.imgur.com/9idmjQq.png" alt="logo"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#sfoglia">SFOGLIA</a></li>
-        <li><a href="#forum">FORUM</a></li>
-        <li><a href="/videoteca-project/user/login">ACCEDI</a></li>
-        <li><a href="#registrati">REGISTRATI</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
     <!-- Indicators -->

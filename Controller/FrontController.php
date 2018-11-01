@@ -21,11 +21,10 @@ class FrontController
         
         $controller = 'C' . ucfirst($resources[2]); // costruisce il nome della classe del Controller 
 		
-		/*    $file = fopen('controllore.php', 'w');       // TESTING url in ingresso
-            $script = $controller;
+		    $file = fopen('controllore.php', 'w');       // TESTING url in ingresso
             //fwrite($file,$controller);
 			fwrite($file,print_r($resources, TRUE));
-            fclose($file); */
+            fclose($file); 
 			
         if (class_exists($controller)) // se la classe esiste
         { // verifica che il metodo sia valido

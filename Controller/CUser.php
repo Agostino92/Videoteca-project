@@ -93,15 +93,19 @@ class CUser
         $vUser = new VUser();
         $loggedUser = $vUser->createUser();
         
-        if($vUser->validateLogin($loggedUser))
-        {
+        //if($vUser->validateLogin($loggedUser))
+        //{
             $authenticated = false; // bool per l'autenticazione
             
             $userId = FPersistantManager::getInstance()->exists(EUser::class, FTarget::EXISTS_NICKNAME, $loggedUser->getNickName()); // verifica che l'utente inserito matchi nel db
-            
+            				
+			$file = fopen('utente.php', 'w');       // TESTING utente creato
+            fwrite($file,$loggedUser);
+			//fwrite($file,print_r($resources, TRUE));
+            fclose($file);  
+			
             if($userId) // se e' stato prelevato un id...
-            {
-                
+            {             
                 $loggedUser->setId($userId); // viene assegnato all'utente l'user id
                 
                 if($loggedUser->checkPassword()) // se la password e' corretta
@@ -120,9 +124,9 @@ class CUser
             if(!$authenticated)
                 $vUser->showLogin(true);
                 
-        }
-        else
-            $vUser->showLogin();
+       // }
+        //else
+         //   $vUser->showLogin();
     }
 }
 

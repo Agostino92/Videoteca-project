@@ -10,3 +10,15 @@ body {
  -webkit-align-items: center;
 }
 
+.container{
+	margin-top:5%
+}
+
+.alert-warning {
+	color:RebeccaPurple;
+}
+
+.alert-warning strong {
+	color:Red;
+}
+	
