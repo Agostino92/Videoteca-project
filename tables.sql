@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `users`
 (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nickname` varchar(50) DEFAULT NULL,
-  `type` set('utente','moderatore') NOT NULL,
+  `type` set('user','moderator') NOT NULL,
   `mail` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   
@@ -19,10 +19,10 @@ CREATE TABLE IF NOT EXISTS `users`
 /*Dump dei dati per la tabella `users`*/
 
 INSERT INTO `users` (`id`, `nickname`, `type`, `mail`, `password`) VALUES 
-('1','iltac','utente','tonino.taccone@gmail.com', 'taccone92'),
-('2','amecav','utente','americocav93@hotmail.it','cavassini92'),
-('3','marossi','utente','mariorossi@gmail.com','rossim95'),
-('4','fra1996','utente','framascitti@gmail.it','francesco96');
+('1','iltac','user','tonino.taccone@gmail.com', 'taccone92'),
+('2','amecav','user','americocav93@hotmail.it','cavassini92'),
+('3','marossi','user','mariorossi@gmail.com','rossim95'),
+('4','fra1996','user','framascitti@gmail.it','francesco96');
 
 /*Struttura tabella `user_info` */
 
