@@ -118,7 +118,7 @@ class FPersistantManager {
             
             while($row = $stmt->fetch())
             { // per ogni tupla restituita dal db viene istanziato un oggetto
-                if($target == FTarget::LOAD_FILM_LIST ) 
+                if($target == FTarget::LOAD_FILMLIST ) 
                 //inserire qui target che richiedono un array come ritorno
                    $obj[] = FPersistantManager::createObjectFromRow($class, $row);
                else $obj = FPersistantManager::createObjectFromRow($class, $row);            
