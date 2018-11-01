@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `users`
      Dump dei dati per la tabella `users`
 */
 
-INSERT INTO `utente` (`id`, `nickname`, `mail`, `password`) VALUES 
+INSERT INTO `users` (`id`, `nickname`, `mail`, `password`) VALUES 
 ('1','iltac','tonino.taccone@gmail.com', 'taccone92'),
 ('2','amecav','americocav93@hotmail.it','cavassini92'),
 ('3','marossi','mariorossi@gmail.com','rossim95'),
