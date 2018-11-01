@@ -14,9 +14,9 @@ CREATE TABLE `utente`
   PRIMARY KEY (`username`)
   );
 -
--- 
---Dump dei dati per la tabella `utente`
---
+/*
+     Dump dei dati per la tabella `utente`
+*/
 
 INSERT INTO `utente` (`username`, `firstname`, `lastname`, `password`, `email`, `birthDate`, `birthPlace`) VALUES 
 ('iltac','tonino','taccone','tonino92', 'tonino.taccone@gmail.com', '1992-08-20','Roma'),
@@ -40,9 +40,9 @@ CREATE TABLE `film`
   PRIMARY KEY (`id`)
 ); 
 
---
--- Dump dei dati per la tabella `film`
---
+/*
+    Dump dei dati per la tabella `film`
+*/
 
 INSERT INTO `film` (`id`, `name`, `author`, `genre`, `descrizione`, `locandina`, `tipo`) VALUES
 ('1', 'The Wolf of Wall Street', 'Martin Scorsese', 'Drammatico' , 'Il film narra l''ascesa e la caduta di Jordan Bellfort, spregiudicato broker newyorkese interpretato da Leonardo Di Caprio, fulcro della pellicola è la descrizione della sua vita, fatta di eccessi e vizi che lo porteranno poi a una rovinosa caduta.', '../resources/img/thewolf.jpg', 'jpeg'),
