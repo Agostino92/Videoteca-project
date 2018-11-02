@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-01 15:38:00
+/* Smarty version 3.1.32, created on 2018-11-02 10:51:33
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bdb0fc89bf093_43112286',
+  'unifunc' => 'content_5bdc1e25503b52_44418270',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f026352f9364e1a44faf497b9475c5aa78e9065d' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\navbar.tpl',
-      1 => 1541083078,
+      1 => 1541152290,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bdb0fc89bf093_43112286 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bdc1e25503b52_44418270 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
@@ -52,10 +52,10 @@ function content_5bdb0fc89bf093_43112286 (Smarty_Internal_Template $_smarty_tpl)
 					<li><a href="/deepmusic/manageReport/show"><span
 							class="glyphicon glyphicon-warning-sign"></span> Report Hub </a></li> 
 					<?php }?>
-					<!-- Se utente loggato 
-					<li><a href="/deepmusic/user/logout"><span
-							class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
-					<?php }?> 
+					<!-- Se utente loggato !-->
+					<li><a href="/videoteca-project/user/logout"><span
+							class="glyphicon glyphicon-log-out"></span> ESCI </a></li>
+					<!--<?php }?> !-->
 					
 				</ul>
 				<!-- Form per la barra di ricerca

@@ -32,7 +32,6 @@ require_once 'Entity/EGuest.php';
 require_once 'Entity/EUser.php';
 require_once 'Entity/EFilm.php';
 require_once 'Entity/EObject.php';
-require_once 'Entity/ERegistered.php';
 /*require_once 'Entity/EUserInfo.php';
 require_once 'Entity/EReport.php';
 require_once 'Entity/EImg.php';

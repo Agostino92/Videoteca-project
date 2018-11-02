@@ -19,10 +19,10 @@ CREATE TABLE IF NOT EXISTS `users`
 /*Dump dei dati per la tabella `users`*/
 
 INSERT INTO `users` (`id`, `nickname`, `type`, `mail`, `password`) VALUES 
-('1','iltac','user','tonino.taccone@gmail.com', 'taccone92'),
-('2','amecav','user','americocav93@hotmail.it','cavassini92'),
-('3','marossi','user','mariorossi@gmail.com','rossim95'),
-('4','fra1996','user','framascitti@gmail.it','francesco96');
+('1','iltac','user','tonino.taccone@gmail.com', '$2y$10$rZuSBFFDZE1d3bAU2Dai6uJG9WyOvofwmr3bQTGRrJlUelOZju1xC'),
+('2','amecav','user','americocav93@hotmail.it','$2y$10$VQWeDO6JywrUyUEhPSJZIOAOf/1jgeBayRtWZOEpLPBFkhlf80JLe'),
+('3','marossi','user','mariorossi@gmail.com','$2y$10$W5SwuC3F02VzxQbqWrUQyegvzOeW5mzBMiMSJG.SxfwM7cUxNRbwa'),
+('4','fra1996','user','framascitti@gmail.it','$2y$10$vy2E7uo8cT9Ab.cEh5LqzuzHXb8I3H8KAeXtaHJD7JOMV6y8bdf.q');
 
 /*Struttura tabella `user_info` */
 

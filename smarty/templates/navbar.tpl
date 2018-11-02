@@ -27,10 +27,10 @@
 					<li><a href="/deepmusic/manageReport/show"><span
 							class="glyphicon glyphicon-warning-sign"></span> Report Hub </a></li> 
 					{/if}
-					<!-- Se utente loggato 
-					<li><a href="/deepmusic/user/logout"><span
-							class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
-					{/if} 
+					<!-- Se utente loggato !-->
+					<li><a href="/videoteca-project/user/logout"><span
+							class="glyphicon glyphicon-log-out"></span> ESCI </a></li>
+					<!--{/if} !-->
 					
 				</ul>
 				<!-- Form per la barra di ricerca

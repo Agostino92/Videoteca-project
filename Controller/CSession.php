@@ -12,7 +12,7 @@ class CSession
         session_start();
         // i suoi dati sono memorizzati all'interno della sessione
         $_SESSION['id'] =  $user->getId();
-        $_SESSION['username'] = $user->getUsername();
+        $_SESSION['name'] = $user->getNickName();
         $_SESSION['type'] = lcfirst(substr(get_class($user), 1));
     }
     
@@ -29,7 +29,7 @@ class CSession
             
             $user = new $uType();
             $user->setId($_SESSION['id']);
-            $user->setUsername($_SESSION['username']);
+            $user->setNickName($_SESSION['name']);
         }
         else
         {

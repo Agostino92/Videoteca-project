@@ -118,7 +118,7 @@ class FUser
     /**
      * Crea una Entity da una row del database
      * @param array $row avente come indici i campi della table da cui e' stata prelevata l'entry
-     * @return EGuest | ERegistered | EModerator
+     * @return EUser | EModerator
      */
     static function createObjectFromRow($row) 
     {

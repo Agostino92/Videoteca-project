@@ -203,7 +203,7 @@ class FPersistantManager {
         $result = false;
         $sql = '';
         $class = '';
-        if(is_a($obj, EGuest::class) || is_a($obj, ERegistered::class) || is_a($obj, EModerator::class)) // se l'oggetto e' una tipologia di utente
+        if(is_a($obj, EUser::class) || is_a($obj, EModerator::class)) // se l'oggetto e' una tipologia di utente
             $class = get_parent_class($obj); // si considera la classe padre, EUser
         else 
             $class = get_class($obj); // restituisce il nome della classe dall'oggetto
@@ -284,7 +284,7 @@ class FPersistantManager {
         $sql='';
         
         $class = '';
-        if(is_a($obj, EGuest::class) || is_a($obj, EModerator::class) || is_a($obj, ERegistered::class))
+        if(is_a($obj, EUser::class) || is_a($obj, EModerator::class))
             $class = get_parent_class($obj);
         else
             $class = get_class($obj); // restituisce il nome della classe dall'oggetto
@@ -353,7 +353,7 @@ class FPersistantManager {
      * @param int $id l'identifier della entry da eliminare.
      * @return bool se l'operazione ha avuto successo o meno.
      */
-    function remove(string $class, int $id) : bool
+    function remove(string $class, int $id, int $id2=null) : bool
     {
         $sql = '';
         if (class_exists($class))
@@ -364,11 +364,18 @@ class FPersistantManager {
             
             $sql = $foundClass::$method();
         }
-        
+        if ($sql)
+        {
+            if($id2 && ($class==ESupporter::class || $class==EFollower::class))
+                return $this->execRemove($sql, $id, $id2);
+            else
+                return $this->execRemove($sql, $id);
+        }
         else
             return NULL;
   
     }
+    
     
     /**
      * Rimuove una entry dal database.
@@ -376,7 +383,7 @@ class FPersistantManager {
      * @param int $id2 opzionale se l'entry ha due primary key
      * @return bool l'esito dell'operazione
      */
-    private function execRemove(string $sql, int $id) : bool {
+    private function execRemove(string $sql, int $id, int $id2 = NULL) : bool {
         
         try
         {
@@ -384,7 +391,9 @@ class FPersistantManager {
             
             $stmt->bindValue(":id", $id, PDO::PARAM_INT); //si associa l'id al campo della query
             
-            
+            if($id2) // se id2 e' stato inserito...
+                $stmt->bindValue(":id2", $id2, PDO::PARAM_INT); //...si associa id2 al campo della query
+                
             $result = $stmt->execute(); //esegue lo statement
             
             $this->__destruct(); // chiude la connessione
@@ -500,7 +509,7 @@ class FPersistantManager {
     private function bindValues(PDOStatement &$stmt, &$obj) 
     {
         $class = '';
-        if(is_a($obj, ERegistered::class) || is_a($obj, EGuest::class) || is_a($obj, EModerator::class))
+        if(is_a($obj, EUser::class) || is_a($obj, EModerator::class))
             $class = get_parent_class($obj);
         else
             $class = get_class($obj); // restituisce il nome della classe dall'oggetto
