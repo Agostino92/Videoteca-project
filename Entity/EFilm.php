@@ -21,7 +21,8 @@ class EFilm
     /** ERecensione che rappresenta la recensione del film */
     private $recensione; 
     
-    /* Instanzia un oggetto EFilm vuoto, di default non visibile a nessuna tipologia di utente */
+    /* 
+	Instanzia un oggetto EFilm vuoto, di default non visibile a nessuna tipologia di utente 
     function __construct ()
     {
         $this->author = new EUser();
@@ -29,7 +30,7 @@ class EFilm
         $supporter = false;
         $registered = false;
     }
-
+    */
    
     /** Metodo che fornisce il nome del regista che ha prodotto il film */
     function getAuthor()
