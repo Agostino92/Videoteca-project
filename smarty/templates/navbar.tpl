@@ -17,7 +17,7 @@
 					<li><a href="#sfoglia">SFOGLIA</a></li>
 					<li><a href="#forum">FORUM</a></li>
 					<li><a href="/videoteca-project/user/login">ACCEDI</a></li>
-					<li><a href="#registrati">REGISTRATI</a></li>
+					<li><a href="/videoteca-project/user/signup">REGISTRATI</a></li>
 				    {else}
 					<li><a href="#sfoglia">SFOGLIA</a></li>
 				    <!-- Se utente loggato 

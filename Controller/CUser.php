@@ -63,8 +63,8 @@ class CUser
         
         if($vUser->validateSignUp($loggedUser))
         {
-            if(!FPersistantManager::getInstance()->exists(EUser::class, $loggedUser->getUsername())
-                && !FPersistantManager::getInstance()->exists(EUser::class, $loggedUser->getEmail()))
+            if(!FPersistantManager::getInstance()->exists(EUser::class,FTarget::EXISTS_NICKNAME, $loggedUser->getNickname())
+                && !FPersistantManager::getInstance()->exists(EUser::class,FTarget::EXISTS_MAIL, $loggedUser->getMail()))
             {
                 // se il nickname e la mail non sono stati ancora usati, si puo salvare l'utente
                 

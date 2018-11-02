@@ -22,3 +22,12 @@ body {
 	color:Red;
 }
 	
+.errori {
+	color:Yellow;
+	margin-top:-10px;
+	margin-bottom: 10px;
+}
+
+.text-danger {
+	color:Yellow;
+}

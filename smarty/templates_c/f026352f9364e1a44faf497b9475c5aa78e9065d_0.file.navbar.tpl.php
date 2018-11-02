@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-02 10:51:33
+/* Smarty version 3.1.32, created on 2018-11-02 18:01:20
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bdc1e25503b52_44418270',
+  'unifunc' => 'content_5bdc82e0018b10_17981664',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f026352f9364e1a44faf497b9475c5aa78e9065d' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\navbar.tpl',
-      1 => 1541152290,
+      1 => 1541178075,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bdc1e25503b52_44418270 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bdc82e0018b10_17981664 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
@@ -40,7 +40,7 @@ function content_5bdc1e25503b52_44418270 (Smarty_Internal_Template $_smarty_tpl)
 					<li><a href="#sfoglia">SFOGLIA</a></li>
 					<li><a href="#forum">FORUM</a></li>
 					<li><a href="/videoteca-project/user/login">ACCEDI</a></li>
-					<li><a href="#registrati">REGISTRATI</a></li>
+					<li><a href="/videoteca-project/user/signup">REGISTRATI</a></li>
 				    <?php } else { ?>
 					<li><a href="#sfoglia">SFOGLIA</a></li>
 				    <!-- Se utente loggato 
