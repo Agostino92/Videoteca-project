@@ -11,9 +11,9 @@ class CSession
     {
         session_start();
         // i suoi dati sono memorizzati all'interno della sessione
-        $_SESSION['id'] =  $user->getId();
-        $_SESSION['name'] = $user->getNickName();
-        $_SESSION['type'] = lcfirst(substr(get_class($user), 1));
+        $_SESSION['IF_id'] =  $user->getId();
+        $_SESSION['IF_name'] = $user->getNickName();
+        $_SESSION['IF_type'] = lcfirst(substr(get_class($user), 1));
     }
     
     /*Restituisce l'utente della sessione corrispondente alla connessione che ha richiamato il metodo.
@@ -23,13 +23,13 @@ class CSession
     {
         session_start();
         
-        if(isset($_SESSION['id']))
+        if(isset($_SESSION['IF_id']))
         {
-            $uType= 'E'.ucfirst($_SESSION['type']); // determina la entity della tipologia di utente
+            $uType= 'E'.ucfirst($_SESSION['IF_type']); // determina la entity della tipologia di utente
             
             $user = new $uType();
-            $user->setId($_SESSION['id']);
-            $user->setNickName($_SESSION['name']);
+            $user->setId($_SESSION['IF_id']);
+            $user->setNickName($_SESSION['IF_name']);
         }
         else
         {
@@ -52,12 +52,12 @@ class CSession
     
     static function populateApplication()
     {
-        setcookie('install', 'ok', time()+3600); //expires in 1h
+        setcookie('IF_install', 'ok', time()+3600); //expires in 1h
     }
     
     static function checkPopulateApplication() : bool
     {
-        if(isset($_COOKIE['install']))
+        if(isset($_COOKIE['IF_install']))
             return true;
         else
             return false;
@@ -65,7 +65,7 @@ class CSession
     
     static function unsetCookie() //rimuove il cookie
     {
-        setcookie('install', 'ok', time()-3600);
+        setcookie('IF_install', 'ok', time()-3600);
     }
 }
 
