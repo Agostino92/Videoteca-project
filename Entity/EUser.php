@@ -52,15 +52,16 @@ class EUser extends EObject
         else
             return false;
     }
-    
+
     /**
      * Metodo che verifica se la password dell'istanza sia corretta. Una password corretta
-     * deve contenere almeno un numero, almeno una lettera minuscola e almeno una lettera maiuscola
+     * deve iniziare con un numero/lettera minuscola/lettera maiuscola, non può contenere due caratteri speciali (._ -) di fila, e deve essere
+	 * di lunghezza compresa tra 6 e 20 caratteri.
      * @return bool true se la password e' corretta, false altrimenti
      */
     function validatePassword() : bool
     {
-        if($this->password && preg_match('/^[[:alnum:]]{6,20}$/', $this->password)) // solo numeri-lettere da 6 a 20
+        if($this->password && preg_match('~(?=^.{6,20}$)^[a-zA-Z0-9]+([._ -]?[a-zA-Z0-9]+)*$~', $this->password)) // solo numeri-lettere da 6 a 20
         {
             return true;
         }
@@ -89,12 +90,13 @@ class EUser extends EObject
     
     /**
      * Metodo che verifica se il nickname dell'istanza sia corretto. Un nickname si intende corretto
-     * quando contiene solo caratteri alfanumerici, per una lunghezza tra 6 e 15 caratteri.
+     * quando inizia con un numero/lettera minuscola/lettera maiuscola, non contiene due caratteri speciali (._ -) di fila 
+	 * e ha una lunghezza compresa tra 6 e 15 caratteri.
      * @return bool true se il nickname e' corretto, false altrimenti
      */
     function validateNickName() : bool
     {
-        if ($this->nickname && preg_match('/^[a-zA-Z0-9_-]{6,15}$/', $this->nickname))
+        if ($this->nickname && preg_match('~(?=^.{6,15}$)^[a-zA-Z0-9]+([._ -]?[a-zA-Z0-9]+)*$~', $this->nickname))
         {
             return true;
         }
