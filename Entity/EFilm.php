@@ -11,9 +11,9 @@ class EFilm
     /** Il genere del film */
     private $genre; 	
     /** La descrizione del film */
-    private $descrizione
+    private $descrizione;
 	/** La locandina del film */
-    private $locandina; ; 	
+    private $locandina; 
     /** Denota se la recensione del film può essere vista dagli utenti guest */  
     private $guest;
     /** Denota se la recensione del film può essere vista dagli utenti registrati */
