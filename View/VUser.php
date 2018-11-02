@@ -141,17 +141,34 @@ class VUser extends VObject
      * @param bool $error
      *            facoltativo se e' stato rilevato un errore
      */
-    function showSignUp(bool $error = NULL)
+    function showSignUp(bool $error1 = NULL, bool $error2 = NULL, bool $error3 = NULL, bool $error4 = NULL, bool $error5 = NULL)
     {
-        if (! $error)
-            $error = false;
+        if (! $error1)
+            $error1 = false;
+		
+		if (! $error2)
+            $error2 = false;
         
+		if (! $error3)
+            $error3 = false;
+		
+		if (! $error4)
+            $error4 = false;
+ 
+		if (! $error5)
+            $error5 = false;
+         
         $user = new EGuest();
         
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('uType', lcfirst(substr(get_class($user), 1)));
         
-        $this->smarty->assign('error', $error);
+        $this->smarty->assign('error1', $error1);
+		$this->smarty->assign('error2', $error2);
+		$this->smarty->assign('error3', $error3);
+		$this->smarty->assign('error4', $error4);
+		$this->smarty->assign('error5', $error5);
+		
         $this->smarty->assign('check', $this->check);
         
         $this->smarty->display('user/register.tpl');
@@ -183,5 +200,22 @@ class VUser extends VObject
                 
         $this->smarty->display('user/removeUser.tpl');
     }
+	
+    function validateNick(EUser $user): bool
+    {
+        if($this->check['name']=$user->validateNickName()) return true; 
+		else return false;
+    }
+    function validatePwd(EUser $user): bool
+    {
+        if($this->check['pwd']=$user->validatePassword()) return true; 
+		else return false;
+    }
+    function validateEmail(EUser $user): bool
+    {
+        if($this->check['mail']=$user->validateMail()) return true; 
+		else return false;
+    }
+	
 }
 

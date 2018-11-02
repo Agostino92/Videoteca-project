@@ -75,15 +75,22 @@ class CUser
                 CSession::startSession($loggedUser);
                 
                               
-                $loggedUser->setUser();
+                $loggedUser->setUserInfo();
                         
-                header('Location: /videoteca-project/User');
+                header('Location: /videoteca-project/userInfo/editInfo/');
             }
             else
-                $vUser->showSignUp(true);
+			{
+			 if (FPersistantManager::getInstance()->exists(EUser::class, FTarget::EXISTS_NICKNAME, $loggedUser->getNickName())) $vUser->showSignUp(true,NULL,NULL,NULL,NULL);
+			 if (FPersistantManager::getInstance()->exists(EUser::class, FTarget::EXISTS_MAIL, $loggedUser->getMail())) $vUser->showSignUp(NULL,true,NULL,NULL,NULL);
+		    }
         }
         else
-            $vUser->showSignUp();
+		{
+			if (!$vUser->validateNick($loggedUser)) $vUser->showSignUp(NULL,NULL,true,NULL,NULL);
+            else if (!$vUser->validatePwd($loggedUser)) $vUser->showSignUp(NULL,NULL,NULL,true,NULL);
+			else if (!$vUser->validateEmail($loggedUser)) $vUser->showSignUp(NULL,NULL,NULL,NULL,true);
+		}
     }
 	
 	/*La funzione Authentication verifica che le credenziali di accesso inserite da un utente siano corrette: in tal caso, 
