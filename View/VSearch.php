@@ -21,11 +21,33 @@ class VSearch extends VObject
         }
         return $string;
     }
-           
-    /*Mostra i risultati della ricerca
-	EUser $user utente della sessione, $array risultati della ricerca (NULL se nessun oggetto e' stato costruito),
-    $key chiave di ricerca adoperata, $value valore di ricerca adoperato, $string dato ricercato dall'utente*/
-	 
+        
+    /**
+     * Ritorna la coppia chiave-valore scelta dall'utente nella ricerca avanzata. Tale coppia 
+     * e' contenuta nell'array globale $_GET.
+     * @return array avente come valori la chiave e il valore
+     */
+    function getKeyAndValue() : array
+    {
+        $key="";
+        $value="";
+        
+        if($_GET['value'] == 'Name' || $_GET['value'] == 'Genre' || $_GET['value'] == 'Author')
+            $value = ucfirst($_GET['value']);
+        if($_GET['key'] == 'Film')
+            $key = ucfirst($_GET['key']);
+                
+        return array($key, $value);
+    }
+	
+    /**
+     * Mostra i risultati della ricerca
+     * @param EUser $user l'utente della sessione
+     * @param array $array contenente i risultati della ricerca | NULL se nessun oggetto e' stato costruito
+     * @param string $key la chiave di ricerca adoperata
+     * @param string $value il valore di ricerca adoperato
+     * @param string $string il dato ricercato dall'utente
+     */
     function showSearchResult(EUser &$user, $array, string $key, string $value, string $string)
     {
         $this->smarty->assign('key', $key);
@@ -39,6 +61,15 @@ class VSearch extends VObject
         
         //mostro il contenuto della pagine
         $this->smarty->display('search/search.tpl');
+    }
+     
+    function showAdvancedSearch(EUser &$user)
+    {
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('uType', lcfirst(substr(get_class($user), 1)));
+        
+        //mostro il contenuto della pagine
+        $this->smarty->display('search/advancedSearch.tpl');
     }
 }
 

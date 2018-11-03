@@ -2,9 +2,6 @@
 require_once 'req.php';
 include_once 'Entity/EObject.php';
 
-//This is the EUser Class, a class made to handle all 
-//kind of users of the application,
-//this is going to be the main class for every action performed
 /**
  * La classe EUser contiene tutti gli attributi e metodi base che sono adoperati da tutte
  * le tipologie di utente. Contiene metodi per impostare, ottenere, validare i seguenti attributi:
@@ -12,9 +9,6 @@ include_once 'Entity/EObject.php';
  * - mail: l'indirizzo utilizzato in fase di registrazione
  * - password: la password per accedere nell'applicazione
  * - info: oggetto EUserInfo contenente informazioni da modificare e visualizzabili nel profilo
- * - img: oggetto EImg contenente l'immagine da visualizzare nel profilo
- * @author gruppo2
- * @package Entity
  */
 class EUser extends EObject
 {
@@ -52,15 +46,16 @@ class EUser extends EObject
         else
             return false;
     }
-    
+
     /**
      * Metodo che verifica se la password dell'istanza sia corretta. Una password corretta
-     * deve contenere almeno un numero, almeno una lettera minuscola e almeno una lettera maiuscola
+     * deve iniziare con un numero/lettera minuscola/lettera maiuscola, non può contenere due caratteri speciali (._ -) di fila, e deve essere
+	 * di lunghezza compresa tra 6 e 20 caratteri.
      * @return bool true se la password e' corretta, false altrimenti
      */
     function validatePassword() : bool
     {
-        if($this->password && preg_match('/^[[:alnum:]]{6,20}$/', $this->password)) // solo numeri-lettere da 6 a 20
+        if($this->password && preg_match('~(?=^.{6,20}$)^[a-zA-Z0-9]+([._ -]?[a-zA-Z0-9]+)*$~', $this->password)) // solo numeri-lettere da 6 a 20
         {
             return true;
         }
@@ -89,12 +84,13 @@ class EUser extends EObject
     
     /**
      * Metodo che verifica se il nickname dell'istanza sia corretto. Un nickname si intende corretto
-     * quando contiene solo caratteri alfanumerici, per una lunghezza tra 6 e 15 caratteri.
+     * quando inizia con un numero/lettera minuscola/lettera maiuscola, non contiene due caratteri speciali (._ -) di fila 
+	 * e ha una lunghezza compresa tra 6 e 15 caratteri.
      * @return bool true se il nickname e' corretto, false altrimenti
      */
     function validateNickName() : bool
     {
-        if ($this->nickname && preg_match('/^[a-zA-Z0-9_-]{6,15}$/', $this->nickname))
+        if ($this->nickname && preg_match('~(?=^.{6,15}$)^[a-zA-Z0-9]+([._ -]?[a-zA-Z0-9]+)*$~', $this->nickname))
         {
             return true;
         }
@@ -161,15 +157,15 @@ class EUser extends EObject
     /**
      * Restituisce l'immagine dell'utente
      * @return EImg | NULL
-     */
+    */
     function getImage()
     {
         $this->img = FPersistantManager::getInstance()->load(EImg::class, $this->id);
         return $this->img;
     }
     
-    /**
-     * Imposta l'immagine dell'utente
+    
+     /* Imposta l'immagine dell'utente
      * @param EImg $img
      */
     function setImage(EImg $img = null)
@@ -194,6 +190,7 @@ class EUser extends EObject
         $this->img = $img;
     }
     
+	
     /**
      * 
      * @return string la paswword dell'utente

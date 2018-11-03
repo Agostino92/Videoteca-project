@@ -4,8 +4,6 @@ include_once 'Entity/EUser.php';
 
 /**
  * La classe EGuest estende la classe padre EUser e implementa la tipologia di utente Guest.
- * @author gruppo2
- * @package Entity
  *
  */
 class EGuest extends EUser

@@ -2,14 +2,10 @@
 require_once 'req.php';
 include_once 'Entity/EObject.php';
 
-//questa classe è fatta per contenere tutte le 
-//informazioni dell'utente che non sono necessarie o cruciali
 /**
  * La classe EUserInfo e' pensata per contenere tutte le informazioni sull'utente che non 
  * sono necessarie in fase di autenticazione/registrazione/ricerca. Proprio per questo, estende
  * la classe EObject avendo come id lo stesso identificativo dell'utente a cui appartengono.
- * @author gruppo2
- * @package Entity
  */
 class EUserInfo extends EObject
 {
