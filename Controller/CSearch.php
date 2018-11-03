@@ -9,6 +9,9 @@ class CSearch
     const KEY_DEFAULT = 'Film';
     /** Valore di base: Ricerca per Nome */
     const VALUE_DEFAULT = 'Name';
+	/** Valore avanzato: Ricerca per Genere */
+    const VALUE_ADVANCED = 'Genre';
+	
         
     /*Questo metodo implementa il caso d'uso 'Ricerca' e fornisce una ricerca dei film rispetto al nome.*/
     static function SimpleSearch()
@@ -33,7 +36,7 @@ class CSearch
      * Questo metodo implementa il caso d'uso 'Ricerca Avanzata'. Un utente puo' infatti ricercare
      * canzoni o utenti in base al nome o al genere musicale. Questo tipo di ricerca e' possibile
      * solo per gli utenti che sono registrati.
-     
+    */
     static function advanced()
     {
         $vSearch = new VSearch();
@@ -47,7 +50,7 @@ class CSearch
             { // si ricavano chiave e valore di ricerca scelti dall'utente
                 list($key, $value)=$vSearch->getKeyAndValue();
                 // se le chiavi corrispondono alle costanti...
-                if(($key == CSearch::KEY_DEFAULT || $key == CSearch::KEY_ADVANCED) && ($value == CSearch::VALUE_DEFAULT || $value == CSearch::VALUE_ADVANCED))
+                if(($key == CSearch::KEY_DEFAULT) && ($value == CSearch::VALUE_DEFAULT || $value == CSearch::VALUE_ADVANCED))
                 { // si prelevano gli oggetti
                     $objects = FPersistantManager::getInstance()->search($key, $value, $string);
                     $vSearch->showSearchResult($user, $objects, $key, $value, $string);
