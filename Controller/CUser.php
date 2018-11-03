@@ -60,7 +60,7 @@ class CUser
     {
         $vUser = new VUser();
         $loggedUser = $vUser->createUser(); // viene creato un utente con i parametri della form
-        
+		
         if($vUser->validateSignUp($loggedUser))
         {
             if(!FPersistantManager::getInstance()->exists(EUser::class,FTarget::EXISTS_NICKNAME, $loggedUser->getNickname())

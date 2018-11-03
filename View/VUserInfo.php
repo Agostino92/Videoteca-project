@@ -75,10 +75,22 @@ class VUserInfo extends VObject
      * @param bool $error
      *            facoltativo se presente un errore
      */
-    function showUserInfoForm(EUser &$user, bool $error = NULL)
+    function showUserInfoForm(EUser &$user, bool $error1 = NULL, bool $error2 = NULL, bool $error3 = NULL, bool $error4 = NULL, bool $error5 = NULL)
     {
-        if (! $error)
-            $error = false;
+        if (! $error1)
+            $error1 = false;
+		
+		if (! $error2)
+            $error2 = false;
+        
+		if (! $error3)
+            $error3 = false;
+		
+		if (! $error4)
+            $error4 = false;
+ 
+		if (! $error5)
+            $error5 = false;
           
         $userInfo = $user->getUserInfo();
 
@@ -87,13 +99,41 @@ class VUserInfo extends VObject
         
         $this->smarty->assign('uType', lcfirst(substr(get_class($user), 1)));
         
-        $this->smarty->assign('error', $error);
+        $this->smarty->assign('error1', $error1);
+		$this->smarty->assign('error2', $error2);
+		$this->smarty->assign('error3', $error3);
+		$this->smarty->assign('error4', $error4);
+		$this->smarty->assign('error5', $error5);
         $this->smarty->assign('check', $this->check);
         
         $this->smarty->display('user/registerUserInfo.tpl');
     }
     
-    
+   	function ValidateFname(EUserInfo &$eui): bool
+    {
+        if($this->check['firstName']=$eui->ValidateFirstname()) return true; 
+		else return false;
+    }
+    function ValidateLname(EUserInfo &$eui): bool
+    {
+        if($this->check['lastName']=$eui->ValidateLastname()) return true; 
+		else return false;
+    }
+    function ValidateBplace(EUserInfo &$eui): bool
+    {
+        if($this->check['birthPlace']=$eui->validateBirthplace()) return true; 
+		else return false;
+    } 
+    function ValidateBdate(EUserInfo &$eui): bool
+    {
+        if($this->check['birthDate']=$eui->validateBirthdate()) return true; 
+		else return false;
+    }
+    function ValidateBio(EUserInfo &$eui): bool
+    {
+        if($this->check['bio']=$eui->validateBio()) return true; 
+		else return false;
+    } 
 }
 
 ?>

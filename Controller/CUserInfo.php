@@ -41,16 +41,27 @@ class CUserInfo
     {
         $vUserInfo = new VUserInfo();
         $loggedUser = CSession::getUserFromSession();
-        if(get_class($loggedUser)!=EGuest::class)
-        {
-            $loggedUserInfo = $vUserInfo->createUserInfo();
-            $loggedUser->setUserInfo($loggedUserInfo);
-            $pic = $vUserInfo->createUserPic();
-            
-        }
+        
+        if($vUserInfo->validateUserInfo($loggedUser))
+        {		
+			if(get_class($loggedUser)!=EGuest::class)
+			{
+				$loggedUserInfo = $vUserInfo->createUserInfo();
+				$loggedUser->setUserInfo($loggedUserInfo);
+				header('Location: /deepmusic/user/profile/'.$loggedUser->getId());
+			}
 		
-        else
-            $vUserInfo->showErrorPage($user, 'Sei un ospite! Che tipo di informazioni personali desideri modificare?');
+			else
+				$vUserInfo->showErrorPage($user, 'Sei un ospite! Che tipo di informazioni personali desideri modificare?');
+		}
+		else
+		{
+			if (!$vUserInfo->validateFname($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,true,NULL,NULL,NULL,NULL);
+            else if (!$vUserInfo->validateLname($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,true,NULL,NULL,NULL);
+			else if (!$vUserInfo->validateBplace($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,true,NULL,NULL);
+			else if (!$vUserInfo->validateBdate($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,NULL,true,NULL);
+			else if (!$vUserInfo->validateBio($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,NULL,NULL,true);
+		}
     }
     
     /**

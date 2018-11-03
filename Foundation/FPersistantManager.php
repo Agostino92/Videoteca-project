@@ -204,13 +204,20 @@ class FPersistantManager {
         $sql = '';
         $class = '';
         if(is_a($obj, EUser::class) || is_a($obj, EModerator::class)) // se l'oggetto e' una tipologia di utente
-            $class = get_parent_class($obj); // si considera la classe padre, EUser
+            $class = EUser::class; // si considera la classe padre, EUser
         else 
             $class = get_class($obj); // restituisce il nome della classe dall'oggetto
         
         $resource = substr($class,1); // nome della risorsa (User, Film, UserInfo, ...)
         $foundClass = 'F'.$resource; // nome della rispettiva classe Foundation
         $method = 'store'.$resource; // nome del metodo store+nome_risorsa
+		
+						
+				        
+		    $file = fopen('registra.php', 'w');       // TESTING url in ingresso
+            //fwrite($file,$loggedUser);
+			fwrite($file,print_r($resource, TRUE));
+            fclose($file); 
         
         if(class_exists($foundClass) && method_exists($foundClass, $method))  // se la classe esiste e il metodo pure...           
             $sql = $foundClass::$method(); //ottieni la stringa sql
@@ -510,7 +517,7 @@ class FPersistantManager {
     {
         $class = '';
         if(is_a($obj, EUser::class) || is_a($obj, EModerator::class))
-            $class = get_parent_class($obj);
+            $class = EUser::class;
         else
             $class = get_class($obj); // restituisce il nome della classe dall'oggetto
         

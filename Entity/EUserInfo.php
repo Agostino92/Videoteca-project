@@ -2,10 +2,14 @@
 require_once 'req.php';
 include_once 'Entity/EObject.php';
 
+//questa classe è fatta per contenere tutte le 
+//informazioni dell'utente che non sono necessarie o cruciali
 /**
  * La classe EUserInfo e' pensata per contenere tutte le informazioni sull'utente che non 
  * sono necessarie in fase di autenticazione/registrazione/ricerca. Proprio per questo, estende
  * la classe EObject avendo come id lo stesso identificativo dell'utente a cui appartengono.
+ * @author gruppo2
+ * @package Entity
  */
 class EUserInfo extends EObject
 {
@@ -151,21 +155,21 @@ class EUserInfo extends EObject
      */
     function validate(bool &$fn, bool &$ln, bool &$bp, bool &$bd, bool $bio)
     {
-        if (ctype_alpha($this->firstName)) 
+        if (preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->firstName)) 
         {
             strtolower($this->firstName);
             ucfirst($this->firstName);
             $fn=true;
         } else $fn = false;
         
-        if (ctype_alpha($this->lastName)) 
+        if (preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->lastName)) 
         {
             strtolower($this->lastName);
             ucwords($this->lastName);
             $ln=true;
         } else $ln = false;
         
-        if (ctype_alpha($this->birthPlace))
+        if (preg_match('~(?=^.{6,25}$)^[a-zA-Z]+([._ -]?[a-zA-Z]+)*([._ -][0-9]{1,3}?)?$~', $this->birthPlace))
         {
             strtolower($this->birthPlace);
             ucwords($this->birthPlace);
@@ -173,21 +177,43 @@ class EUserInfo extends EObject
         } else $bp = false;
         
         
-        if(ctype_digit($this->birthDate))
-        {
-            date_format($this->birthDate, 'DD/MM/YYYY');
-            if($this->birthDate <= mktime(0,0,0,1,1,2000))
-            {
-                $bd = true;
-            } else $bd = false;
-        } else $bd = false;
+        if(preg_match("~^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19\d\d|200[1-9])$~", $this->birthDate))
+            $bd = true;
+		else 
+			$bd = false;
         
-        if (preg_match("/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui", $this->description)) // solo lettere, numeri e spazi
+        if (preg_match("~^.{4,140}$~", $this->bio)) // biografia tra 4 e 140 caratteri
             $bio = true;
         else 
             $bio = false;
     }
-    
+	
+	function ValidateFirstname () : bool 
+	{
+		if(preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->firstName)) return true;
+			else return false;
+	}
+  	function ValidateLastname () : bool 
+	{
+		if(preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->lastName)) return true;
+			else return false;
+	}
+	function ValidateBirthplace () : bool 
+	{
+		if(preg_match('~(?=^.{6,25}$)^[a-zA-Z]+([._ -]?[a-zA-Z]+)*([._ -][0-9]{1,3}?)?$~', $this->birthPlace)) return true;
+			else return false;
+	}
+	function ValidateBirthdate () : bool 
+	{
+		if(preg_match("~^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19\d\d|200[1-9])$~", $this->birthDate)) return true;
+			else return false;
+	}
+	function ValidateBio () : bool 
+	{
+		if(preg_match("~^.{4,140}$~", $this->bio)) return true;
+			else return false;
+	}
+  
     
 }
 
