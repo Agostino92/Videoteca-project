@@ -67,6 +67,6 @@ class CSearch
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
             $vSearch->showErrorPage($user, 'You must be logged to use advanced search functionalities!');
     }
-	*/
+	
 }
 
