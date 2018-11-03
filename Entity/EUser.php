@@ -157,7 +157,7 @@ class EUser extends EObject
     /**
      * Restituisce l'immagine dell'utente
      * @return EImg | NULL
-     
+    */
     function getImage()
     {
         $this->img = FPersistantManager::getInstance()->load(EImg::class, $this->id);
@@ -165,9 +165,9 @@ class EUser extends EObject
     }
     
     
-     * Imposta l'immagine dell'utente
+     /* Imposta l'immagine dell'utente
      * @param EImg $img
-     
+     */
     function setImage(EImg $img = null)
     {
         if(!$img)
@@ -189,7 +189,7 @@ class EUser extends EObject
         
         $this->img = $img;
     }
-    */
+    
 	
     /**
      * 
