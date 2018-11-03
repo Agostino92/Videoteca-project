@@ -2,9 +2,6 @@
 require_once 'req.php';
 include_once 'Entity/EObject.php';
 
-//This is the EUser Class, a class made to handle all 
-//kind of users of the application,
-//this is going to be the main class for every action performed
 /**
  * La classe EUser contiene tutti gli attributi e metodi base che sono adoperati da tutte
  * le tipologie di utente. Contiene metodi per impostare, ottenere, validare i seguenti attributi:
@@ -12,9 +9,6 @@ include_once 'Entity/EObject.php';
  * - mail: l'indirizzo utilizzato in fase di registrazione
  * - password: la password per accedere nell'applicazione
  * - info: oggetto EUserInfo contenente informazioni da modificare e visualizzabili nel profilo
- * - img: oggetto EImg contenente l'immagine da visualizzare nel profilo
- * @author gruppo2
- * @package Entity
  */
 class EUser extends EObject
 {
@@ -163,17 +157,17 @@ class EUser extends EObject
     /**
      * Restituisce l'immagine dell'utente
      * @return EImg | NULL
-     */
+     
     function getImage()
     {
         $this->img = FPersistantManager::getInstance()->load(EImg::class, $this->id);
         return $this->img;
     }
     
-    /**
+    
      * Imposta l'immagine dell'utente
      * @param EImg $img
-     */
+     
     function setImage(EImg $img = null)
     {
         if(!$img)
@@ -195,7 +189,8 @@ class EUser extends EObject
         
         $this->img = $img;
     }
-    
+    */
+	
     /**
      * 
      * @return string la paswword dell'utente

@@ -3,8 +3,6 @@
 /**
  * La classe FrontController effettua il dispatching verso i metodi dei vari controller 
  * a seconda dell'url richiesta dal client. 
- * @author gruppo2
- * @package Controller
  */
 class FrontController
 {
