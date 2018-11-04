@@ -27,8 +27,7 @@ class FUserInfo
                     last_name = :last_name,
                     birth_place = :birth_place, 
                     birth_date = :birth_date, 
-                    bio = :bio,   
-                    genre = :genre
+                    bio = :bio   
                 WHERE id = :id;";
     }
     
@@ -50,14 +49,24 @@ class FUserInfo
      */
     static function bindValues(PDOStatement &$stmt, EUserInfo &$userInfo)
     {
-        $stmt->bindValue(':id', $userInfo->getId(), PDO::PARAM_INT);
+	
+				    $file = fopen('cristo2.php', 'w');       // TESTING url in ingresso
+            fwrite($file,$userInfo->getFirstName());
+			fwrite($file,$userInfo->getLastName());
+			fwrite($file,$userInfo->getBirthPlace());
+			fwrite($file,$userInfo->getBirthDate());
+			fwrite($file,$userInfo->getBio());
+			//fwrite($file,print_r($resources, TRUE));
+            fclose($file); 
+
+        $stmt->bindValue(':id', $userInfo->getId(), PDO::PARAM_INT);			
         
         if($userInfo->getFirstName())
-        {
+        {		
             $stmt->bindValue(':first_name', $userInfo->getFirstName(), PDO::PARAM_STR);
         }
         else
-            $stmt->bindValue(':first_name', 'NULL', PDO::PARAM_STR);
+            $stmt->bindValue(':first_name', 'NULL', PDO::PARAM_STR); 
         
         if($userInfo->getLastName())
         {
@@ -86,7 +95,6 @@ class FUserInfo
         }
         else
             $stmt->bindValue(':bio', 'NULL', PDO::PARAM_STR);
-        
         
             
 	}

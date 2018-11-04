@@ -41,27 +41,29 @@ class CUserInfo
     {
         $vUserInfo = new VUserInfo();
         $loggedUser = CSession::getUserFromSession();
-        
-        if($vUserInfo->validateUserInfo($loggedUser))
-        {		
-			if(get_class($loggedUser)!=EGuest::class)
-			{
-				$loggedUserInfo = $vUserInfo->createUserInfo();
-				$loggedUser->setUserInfo($loggedUserInfo);
-				header('Location: /deepmusic/user/profile/'.$loggedUser->getId());
-			}
 		
+		if(get_class($loggedUser)!=EGuest::class)		
+        {
+			$loggedUserInfo = $vUserInfo->createUserInfo();	
+			
+			if($vUserInfo->validateUserInfo($loggedUserInfo))
+			{			
+			
+				$loggedUser->setUserInfo($loggedUserInfo);	
+				
+				header('Location: /videoteca-project/'.$loggedUser->getId());
+			}
 			else
-				$vUserInfo->showErrorPage($user, 'Sei un ospite! Che tipo di informazioni personali desideri modificare?');
+			{
+				if (!$vUserInfo->validateFname($loggedUserInfo)) $vUserInfo->showUserInfoForm($loggedUser,true,NULL,NULL,NULL,NULL);
+				else if (!$vUserInfo->validateLname($loggedUserInfo)) $vUserInfo->showUserInfoForm($loggedUser,NULL,true,NULL,NULL,NULL);
+				else if (!$vUserInfo->validateBplace($loggedUserInfo)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,true,NULL,NULL);
+				else if (!$vUserInfo->validateBdate($loggedUserInfo)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,NULL,true,NULL);
+				else if (!$vUserInfo->validateBio($loggedUserInfo)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,NULL,NULL,true);
+			}		
 		}
 		else
-		{
-			if (!$vUserInfo->validateFname($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,true,NULL,NULL,NULL,NULL);
-            else if (!$vUserInfo->validateLname($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,true,NULL,NULL,NULL);
-			else if (!$vUserInfo->validateBplace($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,true,NULL,NULL);
-			else if (!$vUserInfo->validateBdate($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,NULL,true,NULL);
-			else if (!$vUserInfo->validateBio($loggedUser)) $vUserInfo->showUserInfoForm($loggedUser,NULL,NULL,NULL,NULL,true);
-		}
+			$vUserInfo->showErrorPage($user, 'Sei un ospite! Che tipo di informazioni personali desideri modificare?');
     }
     
     /**

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-01 15:38:18
+/* Smarty version 3.1.32, created on 2018-11-02 19:10:09
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bdb0fda86efe3_32825443',
+  'unifunc' => 'content_5bdc9301094ab6_51340754',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c71ceb067ce07733ff44222f0ff275db567e481a' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\index.tpl',
-      1 => 1541083096,
+      1 => 1541182206,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5bdb0fda86efe3_32825443 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bdc9301094ab6_51340754 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,9 +169,10 @@ function content_5bdb0fda86efe3_32825443 (Smarty_Internal_Template $_smarty_tpl)
 <div class="container-fluid stiled text-center nopad">
   <div class="col-sm-12 nopad text-center">
     <h3>Cosa stai aspettando?</h3></br>
-    <div class="input-group-btn">
-      <button type="button" class="btn">Iscriviti Subito</button>
-    </div></br></br></br>
+	<form action="/videoteca-project/user/signup">
+      <button type="submit" class="btn">Iscriviti Subito</button>
+	 </form>
+  </br></br></br>
   </div>
 </div>
 

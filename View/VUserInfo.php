@@ -41,12 +41,10 @@ class VUserInfo extends VObject
             $userInfo->setLastName($_POST['lastName']);
         if(isset($_POST['birthPlace']))
             $userInfo->setBirthPlace($_POST['birthPlace']);
-        if(isset($_POST['birthDate']))
+        if(isset($_POST['birthDate']) && preg_match("~^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19\d\d|200[0-9])$~", ($_POST['birthDate'])))
             $userInfo->setBirthDate($_POST['birthDate']);
         if(isset($_POST['bio']))
             $userInfo->setBio($_POST['bio']);
-        if(isset($_POST['genre']))
-            $userInfo->setGenre($_POST['genre']);
     
         return $userInfo;
     }
@@ -59,12 +57,10 @@ class VUserInfo extends VObject
      */
     function validateUserInfo(EUserInfo &$eui) : bool
     {
-        $eui->validate($this->check['firstName'], $this->check['lastName'], $this->check['birthPlace'], $this->check['birthDate'], $this->check['bio']);
-        
-        if($this->check['firstName'] && $this->check['lastName'] && $this->check['birthPlace'] && $this->check['birthDate'])
-            return true;
-        else 
-            return false;
+        if($this->check['firstName']=$eui->ValidateFirstname() && $this->check['lastName']=$eui->ValidateLastname() && $this->check['birthPlace']=$eui->ValidateBirthplace() && $this->check['birthDate']=$eui->ValidateBirthdate() && $this->check['bio']=$eui->ValidateBio())
+            return true;    
+		else 
+			return false;
     }
     
     

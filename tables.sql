@@ -1,8 +1,7 @@
 
 /*Struttura tabella `users` */
 
-CREATE TABLE IF NOT EXISTS `users`
-(
+CREATE TABLE IF NOT EXISTS `users` (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nickname` varchar(50) DEFAULT NULL,
   `type` set('user','moderator') NOT NULL,
@@ -12,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `users`
   PRIMARY KEY (`id`),
   UNIQUE KEY `mail` (`mail`),
   UNIQUE KEY `nickname` (`nickname`)
-  )ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+  )ENGINE=InnoDB DEFAULT CHARSET=latin1;
   
 
 
@@ -28,17 +27,17 @@ INSERT INTO `users` (`id`, `nickname`, `type`, `mail`, `password`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user_info` (
   `id` smallint(5) UNSIGNED NOT NULL,
-  `firstname` varchar(30) DEFAULT NULL,
-  `lastname` varchar(30) DEFAULT NULL,
-  `birthplace` varchar(30) DEFAULT NULL,
-  `birthdate` date DEFAULT NULL,
+  `first_name` varchar(30) DEFAULT NULL,
+  `last_name` varchar(30) DEFAULT NULL,
+  `birth_place` varchar(30) DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
   `bio` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Dump dei dati per la tabella `user_info`*/
 
-INSERT INTO `user_info` (`id`, `firstname`, `lastname`, `birthplace`,`birthdate`, `bio`) VALUES 
+INSERT INTO `user_info` (`id`, `first_name`, `last_name`, `birth_place`,`birth_date`, `bio`) VALUES 
 ('1','Tonino','Taccone', 'Roma','1992-03-12','niente'),
 ('2','Americo','Cavasinni','Milano','1992-06-11','niente'),
 ('3','Mario','Rossi','Napoli','1993-09-13','niente'),
