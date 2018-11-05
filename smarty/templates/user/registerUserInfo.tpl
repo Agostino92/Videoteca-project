@@ -28,7 +28,7 @@
 			<form class="form-vertical col-sm-offset-2 col-sm-8" method="post" action="editInfo">
 				<!-- Nome !-->
 				<div class="form-group">
-					<label for="Nome" class="{if $error1} text-danger{/if}" >Nome:</label> 
+					<label for="Nome" class="{if $error1} text-danger{/if}" >Nome:*</label> 
 					<input type="text" class="form-control" id="Nome" placeholder="Alfanumerico 2-20 caratteri" name="firstName">
 				</div>
 				{if $error1}
@@ -39,7 +39,7 @@
 				
 				<!-- Cognome !-->
 				<div class="form-group">
-					<label for="Cognome" class="{if $error2} text-danger{/if}">Cognome:</label> 
+					<label for="Cognome" class="{if $error2} text-danger{/if}">Cognome:*</label> 
 					<input type="text" class="form-control" id="Cognome" placeholder="Alfanumerico 2-20 caratteri" name="lastName">
 				</div>
 				{if $error2}
@@ -50,7 +50,7 @@
 				
 				<!-- Luogo di nascita !-->
 				<div class="form-group">
-					<label for="Luogodinascita" class="{if $error3} text-danger{/if}">Luogo di nascita:</label> 
+					<label for="Luogodinascita" class="{if $error3} text-danger{/if}">Luogo di nascita:*</label> 
 					<input type="text" class="form-control" id="Luogodinascita" placeholder="3-25 caratteri" name="birthPlace">
 				</div>
 				{if $error3}
@@ -61,7 +61,7 @@
 
 				<!-- Data di nascita !-->
 				<div class="form-group">
-					<label for="Datadinascita" class="{if $error4} text-danger{/if}">Data di nascita:</label> 
+					<label for="Datadinascita" class="{if $error4} text-danger{/if}">Data di nascita:*</label> 
 					<input type="text" class="form-control" id="Datadinascita" placeholder="Formato gg/mm/aaaa" name="birthDate">
 				</div>
 				{if $error4}

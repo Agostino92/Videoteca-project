@@ -95,14 +95,22 @@ class EUserInfo extends EObject
     {
         return $this->birthPlace;
     }
-    
+
+	
     /**
      * 
      * @param string $birthDate la data di nascita
      */
     function setBirthDate (string $birthDate)
     {
-        $this->birthDate = new DateTime($birthDate);
+		$file = fopen('data.php', 'w');       // TESTING url in ingresso
+            fwrite($file,$birthDate);
+      //fwrite($file,print_r($resources, TRUE));
+            fclose($file);
+		
+		
+		$time = strtotime($birthDate);
+		$this->birthDate = date('Y-m-d',$time);
     }
     
     /**
@@ -110,18 +118,10 @@ class EUserInfo extends EObject
      * @param bool $showFormat (opzionale) imposta la data nel formato di visualizzazione
      * @return string contenente la data in formato y-m-d (m/d/y se il campo bool e' true) e' specificata | NULL altrimenti
      */
-    function getBirthDate (bool $showFormat = null)
+    function getBirthDate ()
     {
-        if($this->birthDate)
-        {
-            $format = "y-m-d";
-            if($showFormat)
-               $format = "m/d/y";
-                
-            return $this->birthDate->format($format);
-        }
-        else 
-            return NULL;
+            return $this->birthDate;
+
     }
     
     /**
@@ -143,50 +143,7 @@ class EUserInfo extends EObject
     }
     
     
-      
-    /**
-     * Controlla che i dati dell'oggetto siano validi. I valori booleani passati per riferimento
-     * saranno true o false a seconda se il dato attributo sia valido o meno.
-     * @param bool $fn controllo del primo nome
-     * @param bool $ln controllo del cognome
-     * @param bool $bp controllo del luogo di nascita
-     * @param bool $bd controllo della data di nascita
-     * @param bool $bio controllo della biografia
-     */
-    function validate(bool &$fn, bool &$ln, bool &$bp, bool &$bd, bool $bio)
-    {
-        if (preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->firstName)) 
-        {
-            strtolower($this->firstName);
-            ucfirst($this->firstName);
-            $fn=true;
-        } else $fn = false;
-        
-        if (preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->lastName)) 
-        {
-            strtolower($this->lastName);
-            ucwords($this->lastName);
-            $ln=true;
-        } else $ln = false;
-        
-        if (preg_match('~(?=^.{6,25}$)^[a-zA-Z]+([._ -]?[a-zA-Z]+)*([._ -][0-9]{1,3}?)?$~', $this->birthPlace))
-        {
-            strtolower($this->birthPlace);
-            ucwords($this->birthPlace);
-            $bp=true;
-        } else $bp = false;
-        
-        
-        if(preg_match("~^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19\d\d|200[1-9])$~", $this->birthDate))
-            $bd = true;
-		else 
-			$bd = false;
-        
-        if (preg_match("~^.{4,140}$~", $this->bio)) // biografia tra 4 e 140 caratteri
-            $bio = true;
-        else 
-            $bio = false;
-    }
+
 	
 	function ValidateFirstname () : bool 
 	{
@@ -200,21 +157,25 @@ class EUserInfo extends EObject
 	}
 	function ValidateBirthplace () : bool 
 	{
-		if(preg_match('~(?=^.{6,25}$)^[a-zA-Z]+([._ -]?[a-zA-Z]+)*([._ -][0-9]{1,3}?)?$~', $this->birthPlace)) return true;
+		if(preg_match('~(?=^.{3,25}$)^[a-zA-Z]+([._ -]?[a-zA-Z]+)*([._ -][0-9]{1,3}?)?$~', $this->birthPlace)) return true;
 			else return false;
 	}
 	function ValidateBirthdate () : bool 
 	{
-		if(preg_match("~^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19\d\d|200[1-9])$~", $this->birthDate)) return true;
+		if ($this->birthDate instanceof DateTime)$this->birthDate=$this->birthDate->format('d/m/Y');
+		if(preg_match("~^(19\d\d|200[0-9])[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$~", $this->birthDate)) return true;
 			else return false;
 	}
 	function ValidateBio () : bool 
 	{
-		if(preg_match("~^.{4,140}$~", $this->bio)) return true;
+		if(preg_match("~^.{0,140}$~", $this->bio)) return true;
 			else return false;
 	}
   
-    
+    function __toString()
+    {
+        return "Nome: ".$this->firstName."\nCognome: ".$this->lastName."\nLuogo di nascita: ".$this->birthPlace."\nData di nascita: ".$this->birthDate."\nBiografia: ".$this->bio."\nId: ".$this->id;
+    }
 }
 
 

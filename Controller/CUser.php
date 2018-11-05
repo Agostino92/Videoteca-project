@@ -82,7 +82,7 @@ class CUser
             else
 			{
 			 if (FPersistantManager::getInstance()->exists(EUser::class, FTarget::EXISTS_NICKNAME, $loggedUser->getNickName())) $vUser->showSignUp(true,NULL,NULL,NULL,NULL);
-			 if (FPersistantManager::getInstance()->exists(EUser::class, FTarget::EXISTS_MAIL, $loggedUser->getMail())) $vUser->showSignUp(NULL,true,NULL,NULL,NULL);
+			 else if (FPersistantManager::getInstance()->exists(EUser::class, FTarget::EXISTS_MAIL, $loggedUser->getMail())) $vUser->showSignUp(NULL,true,NULL,NULL,NULL);
 		    }
         }
         else
@@ -100,7 +100,7 @@ class CUser
         $vUser = new VUser();
         $loggedUser = $vUser->createUser();
         
-        //if($vUser->validateLogin($loggedUser))
+       // if($vUser->validateLogin($loggedUser))
         //{
             $authenticated = false; // bool per l'autenticazione
             
@@ -132,8 +132,8 @@ class CUser
                 $vUser->showLogin(true);
                 
        // }
-        //else
-         //   $vUser->showLogin();
+       // else
+        // $vUser->showLogin();
     }
 }
 

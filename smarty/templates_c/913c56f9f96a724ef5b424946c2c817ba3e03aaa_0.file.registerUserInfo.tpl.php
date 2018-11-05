@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-04 11:40:21
+/* Smarty version 3.1.32, created on 2018-11-04 21:41:14
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\user\registerUserInfo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bdecc950167f4_66332961',
+  'unifunc' => 'content_5bdf596a32daa2_25233374',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '913c56f9f96a724ef5b424946c2c817ba3e03aaa' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\user\\registerUserInfo.tpl',
-      1 => 1541328009,
+      1 => 1541364065,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5bdecc950167f4_66332961 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bdf596a32daa2_25233374 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +57,7 @@ function content_5bdecc950167f4_66332961 (Smarty_Internal_Template $_smarty_tpl)
 			<form class="form-vertical col-sm-offset-2 col-sm-8" method="post" action="editInfo">
 				<!-- Nome !-->
 				<div class="form-group">
-					<label for="Nome" class="<?php if ($_smarty_tpl->tpl_vars['error1']->value) {?> text-danger<?php }?>" >Nome:</label> 
+					<label for="Nome" class="<?php if ($_smarty_tpl->tpl_vars['error1']->value) {?> text-danger<?php }?>" >Nome:*</label> 
 					<input type="text" class="form-control" id="Nome" placeholder="Alfanumerico 2-20 caratteri" name="firstName">
 				</div>
 				<?php if ($_smarty_tpl->tpl_vars['error1']->value) {?>
@@ -68,7 +68,7 @@ function content_5bdecc950167f4_66332961 (Smarty_Internal_Template $_smarty_tpl)
 				
 				<!-- Cognome !-->
 				<div class="form-group">
-					<label for="Cognome" class="<?php if ($_smarty_tpl->tpl_vars['error2']->value) {?> text-danger<?php }?>">Cognome:</label> 
+					<label for="Cognome" class="<?php if ($_smarty_tpl->tpl_vars['error2']->value) {?> text-danger<?php }?>">Cognome:*</label> 
 					<input type="text" class="form-control" id="Cognome" placeholder="Alfanumerico 2-20 caratteri" name="lastName">
 				</div>
 				<?php if ($_smarty_tpl->tpl_vars['error2']->value) {?>
@@ -79,8 +79,8 @@ function content_5bdecc950167f4_66332961 (Smarty_Internal_Template $_smarty_tpl)
 				
 				<!-- Luogo di nascita !-->
 				<div class="form-group">
-					<label for="Luogodinascita" class="<?php if ($_smarty_tpl->tpl_vars['error3']->value) {?> text-danger<?php }?>">Luogo di nascita:</label> 
-					<input type="text" class="form-control" id="Luogodinascita" placeholder="6-25 caratteri" name="birthPlace">
+					<label for="Luogodinascita" class="<?php if ($_smarty_tpl->tpl_vars['error3']->value) {?> text-danger<?php }?>">Luogo di nascita:*</label> 
+					<input type="text" class="form-control" id="Luogodinascita" placeholder="3-25 caratteri" name="birthPlace">
 				</div>
 				<?php if ($_smarty_tpl->tpl_vars['error3']->value) {?>
 				<div class="errori">
@@ -90,7 +90,7 @@ function content_5bdecc950167f4_66332961 (Smarty_Internal_Template $_smarty_tpl)
 
 				<!-- Data di nascita !-->
 				<div class="form-group">
-					<label for="Datadinascita" class="<?php if ($_smarty_tpl->tpl_vars['error4']->value) {?> text-danger<?php }?>">Data di nascita:</label> 
+					<label for="Datadinascita" class="<?php if ($_smarty_tpl->tpl_vars['error4']->value) {?> text-danger<?php }?>">Data di nascita:*</label> 
 					<input type="text" class="form-control" id="Datadinascita" placeholder="Formato gg/mm/aaaa" name="birthDate">
 				</div>
 				<?php if ($_smarty_tpl->tpl_vars['error4']->value) {?>

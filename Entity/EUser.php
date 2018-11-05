@@ -2,6 +2,9 @@
 require_once 'req.php';
 include_once 'Entity/EObject.php';
 
+//This is the EUser Class, a class made to handle all 
+//kind of users of the application,
+//this is going to be the main class for every action performed
 /**
  * La classe EUser contiene tutti gli attributi e metodi base che sono adoperati da tutte
  * le tipologie di utente. Contiene metodi per impostare, ottenere, validare i seguenti attributi:
@@ -9,6 +12,9 @@ include_once 'Entity/EObject.php';
  * - mail: l'indirizzo utilizzato in fase di registrazione
  * - password: la password per accedere nell'applicazione
  * - info: oggetto EUserInfo contenente informazioni da modificare e visualizzabili nel profilo
+ * - img: oggetto EImg contenente l'immagine da visualizzare nel profilo
+ * @author gruppo2
+ * @package Entity
  */
 class EUser extends EObject
 {
@@ -46,7 +52,7 @@ class EUser extends EObject
         else
             return false;
     }
-
+    
     /**
      * Metodo che verifica se la password dell'istanza sia corretta. Una password corretta
      * deve iniziare con un numero/lettera minuscola/lettera maiuscola, non può contenere due caratteri speciali (._ -) di fila, e deve essere
@@ -141,6 +147,8 @@ class EUser extends EObject
         
         $info->setId($this->id);
         $this->userInfo = $info;
+
+
         
         if(!FPersistantManager::getInstance()->load(EUserInfo::class, $this->id)) // se le informazioni non sono presenti...
         { //vengono caricate nel db
@@ -154,43 +162,6 @@ class EUser extends EObject
         
     }
     
-    /**
-     * Restituisce l'immagine dell'utente
-     * @return EImg | NULL
-    */
-    function getImage()
-    {
-        $this->img = FPersistantManager::getInstance()->load(EImg::class, $this->id);
-        return $this->img;
-    }
-    
-    
-     /* Imposta l'immagine dell'utente
-     * @param EImg $img
-     */
-    function setImage(EImg $img = null)
-    {
-        if(!$img)
-        {
-            $img = new EImg();
-            $img->setStatic();
-        }
-        
-        $img->setId($this->id);
-        
-        if(!FPersistantManager::getInstance()->load(EImg::class, $this->id)) // se le informazioni non sono presenti...
-        { // vengono salvate nel db
-            FPersistantManager::getInstance()->store($img); 
-        }
-        else
-        { // altrimenti vengono aggiornate
-            FPersistantManager::getInstance()->update($img);
-        }
-        
-        $this->img = $img;
-    }
-    
-	
     /**
      * 
      * @return string la paswword dell'utente
