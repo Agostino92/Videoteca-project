@@ -4,11 +4,11 @@ require_once 'req.php';
 include_once 'View/VObject.php';
 
 /**
- * La classe VSong si occupa dell'input-output per quanto riguarda i dati riguardanti le 
- * canzoni. Ovvero:
- * - dai dati inseriti dall'utente costruisce un oggetto ESong
+ * La classe VFilm si occupa dell'input-output per quanto riguarda i dati riguardanti  
+ * film. Ovvero:
+ * - dai dati inseriti dall'utente costruisce un oggetto EFilm
  * - predispone e visualizza le varie pagine HTML per la creazione/modifica/rimozione/visualizzazione di una canzone.
- * @author gruppo2
+ * 
  * @package View
  */
 class VFilm extends VObject
@@ -33,9 +33,8 @@ class VFilm extends VObject
     /**
      * Mostra il contenuto di una canzone.
      * @param EUser $user l'utente che sta visualizzando la pagina
-     * @param ESong $song la canzone da visualizzare
-     * @param bool $canSee true se l'utente puo' visualizzare la canzone, false altrimenti
-     * @param bool $download true se l'utente puo' scaricare la canzone, false altrimenti
+     * @param EFilm $film la canzone da visualizzare
+     * 
      */
     function showFilm(EUser &$user, EFilm &$film)
     {
