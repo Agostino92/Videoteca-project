@@ -2,7 +2,7 @@
 {if $array}
 <table class="table table-responsive">
 	<tbody>					
-	{foreach $array as $user} <p> porcodio </p> 	{/foreach}
+	{foreach $array as $user} <p></p> 	{/foreach}
 		<tr>
 			<td><a href="/videoteca-project/user/profile/{$user->getId()}">{$user->getNickName()}</a></td>
 			<td>{substr(get_class($user),1)}</td>
