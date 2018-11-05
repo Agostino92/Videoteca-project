@@ -32,8 +32,8 @@
       <div class="item active">
         <img src="https://i.imgur.com/o1uoYkX.png" alt="WWS" width="1200" height="400">
         <div class="carousel-caption">
-          <h2><a href="http://estiloasertivo.blogspot.com.es/">The wolf of Wall Street</a></h2>
-          <h5><a href="http://estiloasertivo.blogspot.com.es/">"Commedia nera e stupefacente senza redenzione, brillante analisi antropologica sull'avidità"</a></h5>
+          <h2><a href="/videoteca-project/film/show/1">The wolf of Wall Street</a></h2>
+          <h5><a href="/videoteca-project/film/show/1">"Commedia nera e stupefacente senza redenzione, brillante analisi antropologica sull'avidità"</a></h5>
 		  <p>Mymovies</p>
         </div>     		
       </div>
@@ -41,8 +41,8 @@
       <div class="item">
         <img src="https://i.imgur.com/VZSLHSy.jpg" alt="8ful 8" width="1200" height="400">
         <div class="carousel-caption">
-          <h2>The hateful eight</h2>
-          <h5>"Sceneggiatura sapiente e ottimi dialoghi nell'ultima opera vincente di Tarantino."</h5>
+          <h2><a href="/videoteca-project/film/show/2">The hateful eight</a></h2>
+          <h5><a href="/videoteca-project/film/show/2">"Sceneggiatura sapiente e ottimi dialoghi nell'ultima opera vincente di Tarantino."</a></h5>
 		  <p>Repubblica</p>
         </div>      
       </div>
@@ -50,8 +50,8 @@
       <div class="item">
         <img src="https://i.imgur.com/LU9S1xY.jpg" alt="NGNL0" width="1200" height="400">
         <div class="carousel-caption">
-          <h2>No Game No Life Zero</h2>
-          <h5>"Coinvolgente, romantico e commovente. Non perderti questo capolavoro dell'animazione!"</h5>
+          <h2><a href="/videoteca-project/film/show/3">No Game No Life Zero</a></h2>
+          <h5><a href="/videoteca-project/film/show/3">"Coinvolgente, romantico e commovente. Non perderti questo capolavoro dell'animazione!"</a></h5>
 		  <p>Anime & Manga ITA</p>
         </div>      
       </div>
@@ -80,7 +80,7 @@
               <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/pTWFyRY.jpg" alt="DjUnch" >            
           </div>
           <div class="col-md-6">
-            <h4 class="list-group-item-heading"></br>Django unchained</h4>          
+            <h4 class="list-group-item-heading"></br><a href="/videoteca-project/film/show/4" class="deco-none">Django unchained</a></h4>          
           </div>
        </div> </br>
 	   <div class="row">
@@ -88,7 +88,7 @@
               <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/bVsEMIX.jpg" alt="DjUnch" >
           </div>
           <div class="col-md-6">
-            <h4 class="list-group-item-heading"></br>Avengers: Infinity War</p>
+            <h4 class="list-group-item-heading"></br><a href="/videoteca-project/film/show/5" class="deco-none">Avengers: Infinity War</a></p>
           </div>
        </div>
     </div>
@@ -103,7 +103,7 @@
     <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-sm-pull-6 container bianco nopad" id="reviewcont">
      <div id="mezza">
 
-	  <img src="https://assets.cdn.moviepilot.de/files/c3eebe10965f3f5b5c0d5a8cb0c4a865da70135bb8a1b477a55d1c35dd41/fill/200/200/Steinsgatemovie.jpg" class="nopad"/>
+	  <a href="/videoteca-project/film/show/7" class="deco-none"><img src="https://assets.cdn.moviepilot.de/files/c3eebe10965f3f5b5c0d5a8cb0c4a865da70135bb8a1b477a55d1c35dd41/fill/200/200/Steinsgatemovie.jpg" class="nopad"/></a>
 	  <p>Un graditissimo ritorno. A chi si era affezionato ai personaggi e alle vicende del quartiere di Akihabara, 
 	  questo film apparirà proprio in questo modo. La trama si svolge un anno dopo gli eventi della serie originale, con la comparsa 
 	  di un problema che potrebbe stravolgere la vita di Rintaro e del suo variegato gruppetto, che richiede un nuovo intervento sulle varie linee temporali.</p>
@@ -121,17 +121,17 @@
     <div class="col-sm-6 container bianco">
       <h4>
 		<p class="alignleft">1.</p>
-		<p class="alignmid">Steins;Gate:The Movie</p>
+		<p class="alignmid"><a href="/videoteca-project/film/show/7" class="deco-none">Steins;Gate:The Movie</a></p>
 		<p class="alignright">10</p>
       </h4>
 	  <h4>
 		<p class="alignleft">2.</p>
-		<p class="alignmid">The Hateful Eight</p>
+		<p class="alignmid"><a href="/videoteca-project/film/show/2" class="deco-none">The Hateful Eight</a></p>
 		<p class="alignright">9</p>
 	  </h4>
 	  <h4>
 		<p class="alignleft">3.</p>
-		<p class="alignmid">Titanic</p>
+		<p class="alignmid"><a href="/videoteca-project/film/show/6" class="deco-none">Titanic</a></p>
 		<p class="alignright">8</p>
 	  </h4>
 	</div>
