@@ -16,7 +16,7 @@ class VFilm extends VObject
     
     /**
      * Costruttore che inizializza il componente view e definisce l'array contenente gli errori
-     * che possono essere commessi nella form di caricamento / modifica brani
+     * che possono essere commessi nella form di caricamento film
      */
     function __construct()
     {
@@ -31,9 +31,9 @@ class VFilm extends VObject
    
     
     /**
-     * Mostra il contenuto di una canzone.
+     * Mostra il contenuto di un film.
      * @param EUser $user l'utente che sta visualizzando la pagina
-     * @param EFilm $film la canzone da visualizzare
+     * @param EFilm $film il film da visualizzare
      * 
      */
     function showFilm(EUser &$user, EFilm &$film)
