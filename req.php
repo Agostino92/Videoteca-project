@@ -6,27 +6,26 @@ require_once 'SmartyConfig.php';
 require_once 'Controller/FrontController.php';
 require_once 'Controller/CUser.php';
 require_once 'Controller/CSession.php';
+require_once 'Controller/CUserInfo.php';
 /*require_once 'Controller/CSong.php';
 require_once 'Controller/CReport.php';
 require_once 'Controller/CManageReport.php'; 
 require_once 'Controller/CFollower.php';
-require_once 'Controller/CUserInfo.php';
 require_once 'Controller/CSupInfo.php';
 require_once 'Controller/CSupporter.php';*/
 require_once 'Controller/CSearch.php';
 /*require_once 'Controller/CAdmin.php'; */
 require_once 'View/VObject.php';
 require_once 'View/VUser.php';
+require_once 'View/VUserInfo.php';
 /*require_once 'View/VReport.php';
 require_once 'View/VSong.php';
-require_once 'View/VUserInfo.php';
 require_once 'View/VSupInfo.php';*/
 require_once 'View/VSearch.php';
 /*require_once 'View/VSupporter.php';
 require_once 'View/VAdmin.php'; */
 
-/*require_once 'Entity/EListener.php';
-require_once 'Entity/EMusician.php';
+/*
 require_once 'Entity/EModerator.php'; */
 require_once 'Entity/EGuest.php';
 require_once 'Entity/EUser.php';
