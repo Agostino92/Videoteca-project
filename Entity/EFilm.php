@@ -13,7 +13,11 @@ class EFilm
     /** La descrizione del film */
     private $descrizione;
 	/** La locandina del film */
+<<<<<<< HEAD
     private $locandina;  	   
+=======
+    private $locandina; 
+>>>>>>> dbc69086bfacb9878477cfbacb9afcffed180481
     /** ERecensione che rappresenta la recensione del film */
     private $recensione; 
     
@@ -110,7 +114,11 @@ class EFilm
         $this->locandina = $locandina;
     }
 	
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> dbc69086bfacb9878477cfbacb9afcffed180481
     /** Nasconde il film a tutti gli utenti */
     function setHidden() 
     {

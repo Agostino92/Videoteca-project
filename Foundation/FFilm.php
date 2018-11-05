@@ -35,7 +35,7 @@ class FFilm {
      * Ottieni il/i film dal database ricercati per author
      * @return string la query sql per la SELECT
      */
-    static function loadFilmforAuthor() : string
+    static function searchFilmByAuthor() : string
     {
         return "SELECT * 
                 FROM film
@@ -93,8 +93,7 @@ class FFilm {
         $stmt->bindValue(':genre', $obj->getGenre(), PDO::PARAM_STR);
 		$stmt->bindValue(':descrizione', $obj->getDescrizione(), PDO::PARAM_STR);
 		$stmt->bindValue(':locandina', $obj->getLocandina(), PDO::PARAM_STR);
-		$stmt->bindValue(':forall', (int) $obj->isForAll(), PDO::PARAM_INT);
-        $stmt->bindValue(':registered', (int) $obj->isForRegisteredOnly(), PDO::PARAM_INT);
+		
         
     }
 	
@@ -115,6 +114,10 @@ class FFilm {
         $film->setGenre($row['genre']);
 		$film->setDescrizione($row['descrizione']);
 		$film->setLocandina($row['locandina']);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> dbc69086bfacb9878477cfbacb9afcffed180481
         // restituisce il film
         return $film; 
     }      
