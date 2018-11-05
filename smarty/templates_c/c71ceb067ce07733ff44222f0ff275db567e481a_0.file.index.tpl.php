@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-02 19:10:09
+/* Smarty version 3.1.32, created on 2018-11-05 12:16:26
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bdc9301094ab6_51340754',
+  'unifunc' => 'content_5be0268a7ebc95_56930023',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c71ceb067ce07733ff44222f0ff275db567e481a' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\index.tpl',
-      1 => 1541182206,
+      1 => 1541416470,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5bdc9301094ab6_51340754 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be0268a7ebc95_56930023 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

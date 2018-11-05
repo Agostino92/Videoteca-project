@@ -31,3 +31,13 @@ body {
 .text-danger {
 	color:Yellow;
 }
+
+.ricercaavanzata label{
+	font-family: "Times New Roman", Times, serif;
+	font-weight: 100;
+}
+
+.ricercaavanzata form-control{
+	font-family: inherit;
+	font-weight: 800;
+}

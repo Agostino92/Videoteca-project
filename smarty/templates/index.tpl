@@ -140,10 +140,10 @@
 <div class="container-fluid stiled text-center nopad">
   <div class="col-sm-12 nopad text-center">
     <h3>Cosa stai aspettando?</h3></br>
-		<form action="/videoteca-project/user/signup">
-			<button type="submit" class="btn">Iscriviti Subito</button>
-		</form>
-    </br></br></br>
+	<form action="/videoteca-project/user/signup">
+      <button type="submit" class="btn">Iscriviti Subito</button>
+	 </form>
+  </br></br></br>
   </div>
 </div>
 

@@ -43,13 +43,13 @@
 							</button>
 						</span>
 					</div>
-				</form>
+				</form> !-->
 				{if $uType != "guest"}
-				<!-- Button per la ricerca avanzata (se loggato) 
+				<!-- Button per la ricerca avanzata (se loggato) !-->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/deepmusic/search/advanced">Advanced Search</a></li>
+					<li><a href="/videoteca-project/search/advanced">Advanced Search</a></li>
 				</ul>
-				{/if} !-->
+				{/if} 
 			</div>
 		</div>
 	</div>
