@@ -4,8 +4,7 @@
 <table class="table table-responsive">
 	<tbody>					
 	{foreach $array as $film}
-		<tr>
-			{if !$film->isHidden()} 
+		<tr> 
 			<!-- Nome film -->
 			<td><a href="/videoteca-project/film/show/{$film->getId()}">{$film->getName()}</a></td>
 			{if isset($key)}
