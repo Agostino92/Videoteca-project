@@ -2,9 +2,7 @@
 require_once 'req.php';
 
 /**
- * @author gruppo2
- * Il Controller CSong implementa le funzionalità 'Gestione Brano'.
- * Un musicista può creare un brano, ed insieme ai moderatori può modificarlo o rimuoverlo.
+ * Controller CFilm
  * @package Controller
  */
 class CFilm
@@ -25,7 +23,7 @@ class CFilm
             $vFilm = new VFilm(); // crea la view
             $user = CSession::getUserFromSession(); // ottiene l'utente dalla sessione
             $film = FPersistantManager::getInstance()->load(EFilm::class, $id); // carica il film dell'id
-            if($film) // se la canzone esiste, esegue il controllo di visibilità
+            if($film) // se il film esiste, esegue il controllo di visibilità
             {                            
                $vFilm->showFilm($user, $film); // mostra la pagina del film
             }
