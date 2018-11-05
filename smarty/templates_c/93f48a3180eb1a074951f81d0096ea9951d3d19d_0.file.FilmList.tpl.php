@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-05 20:39:02
+/* Smarty version 3.1.32, created on 2018-11-05 22:06:49
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\FilmList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5be09c56f18ff1_77498612',
+  'unifunc' => 'content_5be0b0e949ea84_26901375',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '93f48a3180eb1a074951f81d0096ea9951d3d19d' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\FilmList.tpl',
-      1 => 1541446741,
+      1 => 1541448188,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5be09c56f18ff1_77498612 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be0b0e949ea84_26901375 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <?php if ($_smarty_tpl->tpl_vars['array']->value) {?>
 <!-- Table che mostra le canzoni -->
@@ -30,7 +30,7 @@ function content_5be09c56f18ff1_77498612 (Smarty_Internal_Template $_smarty_tpl)
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['array']->value, 'film');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['film']->value) {
-?> <p>porcodio</p> 	
+?> 	
 		<tr>
 			<!-- Nome film -->
 			<td><a href="/videoteca-project/film/show/<?php echo $_smarty_tpl->tpl_vars['film']->value->getId();?>
