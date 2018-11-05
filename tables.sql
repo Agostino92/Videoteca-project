@@ -1,5 +1,5 @@
 
-/*Struttura tabella `users` */
+/*Struttura della tabella `users` */
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
