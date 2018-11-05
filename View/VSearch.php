@@ -32,9 +32,9 @@ class VSearch extends VObject
         $key="";
         $value="";
         
-        if($_GET['value'] == 'Name' || $_GET['value'] == 'Genre' || $_GET['value'] == 'Author')
+        if($_GET['value'] == 'name' || $_GET['value'] == 'genre' || $_GET['value'] == 'author')
             $value = ucfirst($_GET['value']);
-        if($_GET['key'] == 'Film')
+        if($_GET['key'] == 'film' || $_GET['key'] == 'user')
             $key = ucfirst($_GET['key']);
                 
         return array($key, $value);

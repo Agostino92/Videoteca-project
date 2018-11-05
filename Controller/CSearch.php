@@ -7,15 +7,17 @@ class CSearch
 {
     /** Chiave di default: Ricerca di film */
     const KEY_DEFAULT = 'Film';
-    /** Valore di base: Ricerca per Nome */
-    const VALUE_DEFAULT = 'Name';
-	/** Valore avanzato: Ricerca per Genere */
-    const VALUE_ADVANCED = 'Genre';
+    /** Chiave avanzata: Ricerca di utenti */
+    const KEY_ADVANCED = 'User';	
+    /** Valore di base: Ricerca per Genere */
+    const VALUE_DEFAULT = 'Genre';
+	/** Valore avanzato: Ricerca per Nome */
+    const VALUE_ADVANCED = 'Name';
 	/** Valore up-avanzato: Ricerca per Autore */
     const VALUE_UPPER_ADVANCED = 'Author';
         
     /*Questo metodo implementa il caso d'uso 'Ricerca' e fornisce una ricerca dei film rispetto al nome.*/
-    static function SimpleSearch()
+    static function simple()
     {
         $vSearch = new VSearch();
         $user = CSession::getUserFromSession();
@@ -35,7 +37,7 @@ class CSearch
 	
 	/**
      * Questo metodo implementa il caso d'uso 'Ricerca Avanzata'. Un utente puo' infatti ricercare
-     * canzoni o utenti in base al nome o al genere musicale. Questo tipo di ricerca e' possibile
+     * film o utenti in base al nome, al genere o all'autore. Questo tipo di ricerca e' possibile
      * solo per gli utenti che sono registrati.
     */
     static function advanced()
@@ -51,13 +53,13 @@ class CSearch
             { // si ricavano chiave e valore di ricerca scelti dall'utente
                 list($key, $value)=$vSearch->getKeyAndValue();
                 // se le chiavi corrispondono alle costanti...
-                if(($key == CSearch::KEY_DEFAULT) && ($value == CSearch::VALUE_DEFAULT || $value == CSearch::VALUE_ADVANCED || $value == CSearch::VALUE_UPPER_ADVANCED))
+                if(($key == CSearch::KEY_DEFAULT || $key == CSearch::KEY_ADVANCED) && ($value == CSearch::VALUE_DEFAULT || $value == CSearch::VALUE_ADVANCED || $value == CSearch::VALUE_UPPER_ADVANCED))
                 { // si prelevano gli oggetti
                     $objects = FPersistantManager::getInstance()->search($key, $value, $string);
                     $vSearch->showSearchResult($user, $objects, $key, $value, $string);
                 }
                 else //...altrimenti si mostra un errore
-                    $vSearch->showErrorPage($user, 'Seems like key and value are not corrected...');
+                    $vSearch->showErrorPage($user, 'Chiave e valore non sono corretti');
             } 
             else // se una stringa non e' inserita, l'utente viene reindirizzato alla pagina della ricerca avanzata
             {
@@ -65,7 +67,7 @@ class CSearch
             }
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
-            $vSearch->showErrorPage($user, 'You must be logged to use advanced search functionalities!');
+            $vSearch->showErrorPage($user, "Devi aver effettuato l'accesso per effettuare la ricerca avanzata");
     }
 	
 }
