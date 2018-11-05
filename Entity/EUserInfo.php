@@ -147,17 +147,17 @@ class EUserInfo extends EObject
 	
 	function ValidateFirstname () : bool 
 	{
-		if(preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->firstName)) return true;
+		if(preg_match("~(?=^.{2,20}$)^[a-zA-Z]+([ ']?[a-zA-Z]+)*$~", $this->firstName)) return true;
 			else return false;
 	}
   	function ValidateLastname () : bool 
 	{
-		if(preg_match('~(?=^.{2,20}$)^[a-zA-Z]+([ ]?[a-zA-Z]+)*$~', $this->lastName)) return true;
+		if(preg_match("~(?=^.{2,20}$)^[a-zA-Z]+([ ']?[a-zA-Z]+)*$~", $this->lastName)) return true;
 			else return false;
 	}
 	function ValidateBirthplace () : bool 
 	{
-		if(preg_match('~(?=^.{3,25}$)^[a-zA-Z]+([._ -]?[a-zA-Z]+)*([._ -][0-9]{1,3}?)?$~', $this->birthPlace)) return true;
+		if(preg_match("~(?=^.{3,25}$)^[a-zA-Z]+([._ -']?[a-zA-Z]+)*([._ -][0-9]{1,3}?)?$~", $this->birthPlace)) return true;
 			else return false;
 	}
 	function ValidateBirthdate () : bool 
