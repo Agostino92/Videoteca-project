@@ -77,7 +77,7 @@
     <div class="col-sm-6">
 	   <div class="row">
 	      <div class="media col-md-3 col-md-offset-1">           
-              <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/pTWFyRY.jpg" alt="DjUnch" >            
+              <a href="/videoteca-project/film/show/4" class="deco-none"><img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/pTWFyRY.jpg" alt="DjUnch" ></a>            
           </div>
           <div class="col-md-6">
             <h4 class="list-group-item-heading"></br><a href="/videoteca-project/film/show/4" class="deco-none">Django unchained</a></h4>          
@@ -85,7 +85,7 @@
        </div> </br>
 	   <div class="row">
 	      <div class="media col-md-3 col-md-offset-1">
-              <img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/bVsEMIX.jpg" alt="DjUnch" >
+              <a href="/videoteca-project/film/show/5" class="deco-none"><img class="media-object img-rounded img-responsive"  src="https://i.imgur.com/bVsEMIX.jpg" alt="DjUnch" ></a>
           </div>
           <div class="col-md-6">
             <h4 class="list-group-item-heading"></br><a href="/videoteca-project/film/show/5" class="deco-none">Avengers: Infinity War</a></p>
