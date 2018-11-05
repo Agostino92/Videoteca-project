@@ -1,5 +1,5 @@
 
-/*Struttura della tabella `users` */
+/*Struttura tabella `users` */
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -49,21 +49,21 @@ INSERT INTO `user_info` (`id`, `first_name`, `last_name`, `birth_place`,`birth_d
 
 CREATE TABLE IF NOT EXISTS `film` 
 (
-  `codice` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(40) DEFAULT NULL,
   `author` varchar(30) DEFAULT NULL,
   `genre` varchar(30) DEFAULT NULL,
   `descrizione` varchar(2048) NOT NULL,
   `locandina` varchar(256) DEFAULT NULL,
   `tipo` varchar(10) DEFAULT NULL,
-   PRIMARY KEY (`codice`)
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 /*Dump dei dati per la tabella `film` */
 
 
-INSERT INTO `film` (`codice`, `name`, `author`, `genre`, `descrizione`, `locandina`, `tipo`) VALUES
+INSERT INTO `film` (`id`, `name`, `author`, `genre`, `descrizione`, `locandina`, `tipo`) VALUES
 ('1', 'The Wolf of Wall Street', 'Martin Scorsese', 'Drammatico' , 'Il film narra l''ascesa e la caduta di Jordan Bellfort, spregiudicato broker newyorkese interpretato da Leonardo Di Caprio, fulcro della pellicola è la descrizione della sua vita, fatta di eccessi e vizi che lo porteranno poi a una rovinosa caduta.', '../resources/immagini_db/thewolf.jpg', 'jpeg'),
 ('2', 'The Hateful Eight', 'Quentin Tarantino', 'Western', 'Alcuni anni dopo la fine della guerra civile il cacciatore di taglie John Ruth chiamato "il boia" , scorta la latitante Daisy Domergue. Nel corso del loro viaggio incontrano due sconosciuti: il Maggiore Marquis Warren, ex soldato diventato cacciatore di taglie e Chris Mannix, un rinnegato del Sud che afferma di essere il nuovo sceriffo della città. A causa di una tormenta di neve sono tutti costretti a rifugiarsi in un negozio chiamato "Minnie", dove con l''inganno, vengono attirati in un terreno molto pericoloso.', '../resources/immagini_db/hatefuleight.jpg','jpeg'),
 ('3', 'No game no life zero', 'Yu Kamiya', 'Fantasy', 'Capitolo della serie No Game no Life, che ha come protagonisti il fratello e sorella Sora e Shiro, due NEET imbattibili in qualsiasi gioco. Sono conosciute nel mondo videoludico come i Senza Nome. Un giorno ricevono una misteriosa sfida a scacchi da un utente anonimo, accettano la sfida ma, al termine della scontro, gli viene posta una domanda che cambierà per sempre il loro destino.', '../resources/immagini_db/nogamenolife.jpg', 'jpeg'),

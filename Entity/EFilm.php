@@ -1,9 +1,8 @@
 <?php
 
-class EFilm 
+class EFilm extends EObject
 {
-    /** Il codice del film */
-    private $codice; 
+
 	/** Il nome del film */
     private $name;          
     /** L'autore del film */
@@ -27,6 +26,10 @@ class EFilm
         $registered = false;
     }
     */
+	    function __construct()
+    {
+        parent::__construct();
+    }
    
     /** Metodo che fornisce il nome del regista che ha prodotto il film */
     function getAuthor()
@@ -44,11 +47,6 @@ class EFilm
         return $this->genre;
     }
     
-    /** Metodo che fornisce il codice di un film */
-    function getCodice() 
-    {
-        return $this->codice;
-    }
 	
 	/** Metodo che fornisce la descrizione di un film */
     function getDescrizione() 
@@ -91,13 +89,7 @@ class EFilm
     { 
        $this->recensione = $recensione;
     }
-	
-	/** Metodo che imposta il codice del film */
-    function setCodice($codice)
-    {
-        $this->codice = $codice;
-    }
-         
+
     /** Metodo che imposta la descrizione del film */
     function setDescrizione($descrizione)
     {
@@ -109,12 +101,5 @@ class EFilm
     {
         $this->locandina = $locandina;
     }
-	
-   
-    /** Nasconde il film a tutti gli utenti */
-    function setHidden() 
-    {
-        $this->guest = false;
-        $this->registered = false;
-    }
+
  }   

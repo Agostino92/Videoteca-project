@@ -52,12 +52,6 @@ class CSearch
             if ($string) // se la stringa e' stata inserita
             { // si ricavano chiave e valore di ricerca scelti dall'utente
                 list($key, $value)=$vSearch->getKeyAndValue();
-				
-				$file = fopen('userinfo.php', 'w');       // TESTING url in ingresso
-           // fwrite($file,$loggedUserInfo->__toString());
-      fwrite($file,print_r($vSearch->getKeyAndValue(),TRUE));
-            fclose($file);
-				
                 // se le chiavi corrispondono alle costanti...
                 if(($key == CSearch::KEY_DEFAULT || $key == CSearch::KEY_ADVANCED) && ($value == CSearch::VALUE_DEFAULT || $value == CSearch::VALUE_ADVANCED || $value == CSearch::VALUE_UPPER_ADVANCED))
                 { // si prelevano gli oggetti

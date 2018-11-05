@@ -45,6 +45,7 @@ class CUser
             header('Location: Invalid HTTP method detected');
     }
     
+	
     /*Effettua il logout.*/
     static function logout()
     {

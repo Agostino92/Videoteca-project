@@ -25,9 +25,9 @@ class FFilm {
      */
     static function searchFilmByGenre() : string
     {
-        return "SELECT * 
+        return "SELECT film.* 
                 FROM film
-                where genre= film.genre"; //query sql
+                WHERE LOCATE( :Genre , film.genre) > 0;";
     }
 	
 	
@@ -35,11 +35,11 @@ class FFilm {
      * Ottieni il/i film dal database ricercati per author
      * @return string la query sql per la SELECT
      */
-    static function loadFilmforAuthor() : string
+    static function searchFilmByAuthor() : string
     {
-        return "SELECT * 
+        return "SELECT film.* 
                 FROM film
-                where author= film.author"; //query sql
+                WHERE LOCATE( :Author , film.author) > 0;";
     }
 	
      /**
@@ -87,14 +87,12 @@ class FFilm {
      */
     static function bindValues(PDOStatement &$stmt, EFilm &$obj) 
     {
-        $stmt->bindValue(':codice', $obj->getCodice(), PDO::PARAM_INT);
+        $stmt->bindValue(':id', $obj->getId(), PDO::PARAM_INT);
         $stmt->bindValue(':name', $obj->getName(), PDO::PARAM_STR);
 		$stmt->bindValue(':author', $obj->getAuthor(), PDO::PARAM_STR);
         $stmt->bindValue(':genre', $obj->getGenre(), PDO::PARAM_STR);
 		$stmt->bindValue(':descrizione', $obj->getDescrizione(), PDO::PARAM_STR);
 		$stmt->bindValue(':locandina', $obj->getLocandina(), PDO::PARAM_STR);
-		$stmt->bindValue(':forall', (int) $obj->isForAll(), PDO::PARAM_INT);
-        $stmt->bindValue(':registered', (int) $obj->isForRegisteredOnly(), PDO::PARAM_INT);
         
     }
 	
@@ -109,7 +107,7 @@ class FFilm {
          
         // creazione dell'oggetto Efilm
         $film = new EFIlm(); 
-        $film->setCodice($row['codice']);
+        $film->setId($row['id']);
         $film->setName($row['name']);
         $film->setAuthor($row['author']);
         $film->setGenre($row['genre']);
