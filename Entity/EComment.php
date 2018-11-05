@@ -1,6 +1,6 @@
 <?php
 
-require_once 'inc.php';
+require_once 'req.php';
 include_once 'Entity/EObject.php';
 
 /**
