@@ -42,6 +42,7 @@ require_once 'Entity/ESupporter.php'; */
 
 /*require_once 'Foundation/FDatabase.php';*/
 require_once 'Foundation/FTarget.php';
+require_once 'Foundation/FFilm.php';
 /*require_once 'Foundation/FSong.php';
 require_once 'Foundation/FMp3.php';*/
 require_once 'Foundation/FUser.php';

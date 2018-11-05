@@ -13,11 +13,7 @@ class EFilm
     /** La descrizione del film */
     private $descrizione;
 	/** La locandina del film */
-    private $locandina; 
-    /** Denota se la recensione del film può essere vista dagli utenti guest */  
-    private $guest;
-    /** Denota se la recensione del film può essere vista dagli utenti registrati */
-    private $registered;        
+    private $locandina;  	   
     /** ERecensione che rappresenta la recensione del film */
     private $recensione; 
     
@@ -114,32 +110,7 @@ class EFilm
         $this->locandina = $locandina;
     }
 	
-    /** Controlla se il film e' visibile per tutte le tipologie di utenti */
-    function isForAll() : bool
-    {
-        return $this->guest;
-    }
-          
-    /** Controlla se il film e' visibile solo per chi e' registrato */
-    function isForRegisteredOnly() : bool
-    {
-        return $this->registered;
-    }
-    
-    /** Imposta la visibilita' per tutti gli utenti */
-    function setForAll() 
-    {
-        $this->guest = true;
-        $this->registered = true;
-    }
-            
-    /** Imposta la visibilita' solo per chi e' registrato */
-    function setForRegisteredOnly() 
-    {
-        $this->guest = false;
-        $this->registered = true;
-    }
-    
+   
     /** Nasconde il film a tutti gli utenti */
     function setHidden() 
     {

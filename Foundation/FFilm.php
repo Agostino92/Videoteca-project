@@ -14,9 +14,9 @@ class FFilm {
      */
     static function searchFilmByName() : string
     {
-        return "SELECT * 
+        return "SELECT film.* 
                 FROM film
-                where name= film.name"; //query sql
+                WHERE LOCATE( :Name , film.name) > 0;";
     }
 	
 	/**
@@ -115,13 +115,6 @@ class FFilm {
         $film->setGenre($row['genre']);
 		$film->setDescrizione($row['descrizione']);
 		$film->setLocandina($row['locandina']);
-        //impostazione visibilita'.
-        if ($row['forall']) 
-            $film->setForAll();
-        elseif ($row['registered']) 
-            $film->setForRegisteredOnly();
-        else 
-            $film->setHidden();
         // restituisce il film
         return $film; 
     }      

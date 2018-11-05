@@ -11,5 +11,5 @@
 	</tbody>
 </table>
 {else}
-<p>Non c'è alcun utente!</p>
+<p>Non è stato trovato alcun utente!</p>
 {/if}
