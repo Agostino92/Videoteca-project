@@ -6,7 +6,16 @@
  
 class FFilm {
 	
-    
+     /**
+     * Carica un film dal database.
+     * @return string la query sql per la SELECT
+     */
+    static function loadFilm() : string
+    {
+        return "SELECT film.*
+                FROM film
+                where film.id= :id;"; //query sql
+    }
 	
 	/**
      * Ottieni un film dal database ricercato per nome

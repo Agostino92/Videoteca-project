@@ -1,4 +1,6 @@
 <?php
+require_once 'req.php';
+include_once 'Entity/EObject.php';
 
 class EFilm extends EObject
 {
