@@ -47,7 +47,7 @@
 				{if $uType != "guest"}
 				<!-- Button per la ricerca avanzata (se loggato) !-->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/videoteca-project/search/advanced">Advanced Search</a></li>
+					<li><a href="/videoteca-project/search/advanced">RICERCA AVANZATA</a></li>
 				</ul>
 				{/if} 
 			</div>

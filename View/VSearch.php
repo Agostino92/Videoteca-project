@@ -58,7 +58,7 @@ class VSearch extends VObject
         $this->smarty->assign('uType', lcfirst(substr(get_class($user), 1)));
   
         $this->smarty->assign('array', $array);
-        
+
         //mostro il contenuto della pagine
         $this->smarty->display('search/search.tpl');
     }

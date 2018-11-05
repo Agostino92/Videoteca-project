@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-05 12:16:26
+/* Smarty version 3.1.32, created on 2018-11-05 12:40:00
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5be0268a83dc16_86208274',
+  'unifunc' => 'content_5be02c10ce8957_42634885',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f026352f9364e1a44faf497b9475c5aa78e9065d' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\navbar.tpl',
-      1 => 1541416480,
+      1 => 1541417782,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5be0268a83dc16_86208274 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be02c10ce8957_42634885 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
@@ -72,7 +72,7 @@ function content_5be0268a83dc16_86208274 (Smarty_Internal_Template $_smarty_tpl)
 				<?php if ($_smarty_tpl->tpl_vars['uType']->value != "guest") {?>
 				<!-- Button per la ricerca avanzata (se loggato) !-->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/videoteca-project/search/advanced">Advanced Search</a></li>
+					<li><a href="/videoteca-project/search/advanced">RICERCA AVANZATA</a></li>
 				</ul>
 				<?php }?> 
 			</div>
