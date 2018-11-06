@@ -74,16 +74,12 @@ class CUser
                         
 
                         if ($content == 'listafilm') // se il parametro e' following
-                        { // si carica la lista dei following del profilo utente
-                            $array = FPersistantManager::getInstance()->load(EUser::class, $profileUser->getId(), FTarget::LOAD_FILMLIST);
+                        // si carica la lista dei following del profilo utente
+                            $array = FPersistantManager::getInstance()->load(EUser::class, $profileUser->getId(), FTarget::LOAD_FOLLOWING);
                             $content = 'Listafilm';
-                        }
+                        
 
-                        else // se il contenuto non e' specificato, e' stato inserito solo l'id e quindi si visualizza la pagina base
-                        {
-								$array = FPersistantManager::getInstance()->load(EUser::class, $profileUser->getId(), FTarget::LOAD_FOLLOWING);
-								$content = 'Listafilm';
-						}                       
+                        
                         $vUser->showProfile($profileUser, $loggedUser, $content, $array); // mostra il profilo
                     } 
                     else
