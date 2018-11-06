@@ -30,7 +30,9 @@ class FTarget
     const EXISTS_MAIL = 'Mail'; 
     /** verifica che un utente non esiste già */
     const EXISTS_USER = 'User';
-	
+    /** verifica che un utente che segue il film non esiste già */
+	const EXISTS_FOLLOWER = 'Follower';
+
     
 }
 
