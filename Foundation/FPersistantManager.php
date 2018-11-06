@@ -4,7 +4,7 @@
  * Lo scopo di questa classe e' quello di fornire un accesso unico al DBMS, incapsulando
  * al proprio interno i metodi statici di tutte le altre classi Foundation, cosi che l'accesso
  * ai dati persistenti da parte degli strati superiore dell'applicazione sia piu' intuitivo.
- * @author gruppo 2
+ *
  * @package Foundation
  */
 
@@ -118,7 +118,7 @@ class FPersistantManager {
             
             while($row = $stmt->fetch())
             { // per ogni tupla restituita dal db viene istanziato un oggetto
-                if($target == FTarget::LOAD_FILMLIST ) 
+                if($target == FTarget::LOAD_FOLLOWING ) 
                 //inserire qui target che richiedono un array come ritorno
                    $obj[] = FPersistantManager::createObjectFromRow($class, $row);
                else $obj = FPersistantManager::createObjectFromRow($class, $row);            
@@ -418,7 +418,7 @@ class FPersistantManager {
      * @param string $target opzionale, sono accettabili solo valori di FTarget. 
      * Associazioni class - target è la seguente:
      *  - EUser ( FTarget::EXISTS_USER FTarget::EXISTS_MAIL FTarget::EXISTS_NICKNAME )
-     
+     * - EFollower (FTarget:: EXISTS_FOLLOWER)
      * @param string | int $value il valore di cui controllare l'unicita'
      * @param string | int $value2 opzionale, se presente una doppia chiave nella table da interrogare
      * @return bool | int true se il dato esiste, false altrimenti. un int se si richiede l'esistenza di un User.
@@ -438,7 +438,7 @@ class FPersistantManager {
         }
         if ($sql)
         {
-            if($value2 && ( $target==FTarget::EXISTS_USER))
+            if($value2 && ( $target==FTarget::EXISTS_FOLLOWER || $target==FTarget::EXISTS_USER))
             {
                 return $this->execExists($sql, $value, $value2);
             }
