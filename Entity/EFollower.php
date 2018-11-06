@@ -3,13 +3,13 @@
 require_once 'req.php';
 
 /**
- * La classe EFollower fornisce un modello per il caso d'uso 'Segui Utente'. 
+ * La classe EFollower fornisce un modello per il caso d'uso 'Segui Film'. 
  * Un'istanza di tale classe mette in relazione un utente con un ulteriore utente, che ha deciso di seguirlo. 
  */
 class EFollower
 {
-    /**  EUser contenente l'utente oggetto del follow */
-    private $user; 
+    /**  EUser contenente il film oggetto del follow */
+    private $film; 
     /** EUser contenente l'utente follower */
     private $follower; 
     
@@ -20,11 +20,11 @@ class EFollower
     
     /**
      * 
-     * @return EUser l'utente oggetto del follow
+     * @return EFilm il film oggetto del follow
      */
-    function getUser() : EUser
+    function getFilm() : EFilm
     {
-        return $this->user;
+        return $this->film;
     }
 
     /**
@@ -36,11 +36,11 @@ class EFollower
     }
 
     /**
-     * @param EUser l'utente oggetto del follow
+     * @param EFilm il film oggetto del follow
      */
-    function setUser(EUser &$user)
+    function setFilm(EFilm &$film)
     {
-        $this->user = $user;
+        $this->film = $film;
     }
 
     /**
@@ -53,12 +53,12 @@ class EFollower
 
         
     /**
-     * Verifica che l'associazione tra gli utenti sia presente nel database
+     * Verifica che l'associazione tra utente e film sia presente nel database
      * @return bool true se l'associazione esiste, false altrimenti
      */
     function exists() : bool
     {
-        $uId = $this->user->getId();
+        $uId = $this->film->getId();
         $fId = $this->follower->getId();
         
         if(FPersistantManager::getInstance()->exists(EFollower::class, FTarget::EXISTS_FOLLOWER, $uId, $fId))
