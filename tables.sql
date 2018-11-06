@@ -73,11 +73,26 @@ INSERT INTO `film` (`id`, `name`, `author`, `genre`, `descrizione`, `locandina`,
 ('7', 'Steins Gate', 'Kanji Wakabayashi', 'Fantasy', 'Il film è ambientato un anno dopo gli avvenimenti della serie televisiva,i protagonisti vivono nella linea temporale Steins Gate, ma Okabe continua ad avere nella sua mente dei deja vu delle linee temporali alfa e beta. La sua capacità di avere il reading steiner fa si che l''esistenza di Okabe sia parallela alle due linee e venga negata nella linea Steins Gate. Cosi Okabe svanisce nel nulla e nessuno si ricorda della sua esistenza.','https://i.imgur.com/7djvtJu.jpg','jpeg'); 
 
 
+/* Struttura tabella `followers` */
+
+
+CREATE TABLE IF NOT EXISTS `followers` (
+  `id` smallint(5) UNSIGNED NOT NULL,
+  `id_follower` smallint(5) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`,`id_follower`),
+  KEY `id_follower` (`id_follower`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 /* Constraints for table `user_info` */
 
 ALTER TABLE `user_info`
-  ADD CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+ /* Constraints for table `followers` */
+ ALTER TABLE `followers`
+  ADD CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`id`) REFERENCES `film` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `followers_ibfk_2` FOREIGN KEY (`id_follower`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*
 CREATE TABLE `cartacredito` (
