@@ -22,8 +22,6 @@ class FTarget
 {
    
     
-    /** caricamento della lista film personale di un utente */
-    const LOAD_FILMLIST = 'Filmlist'; 
     /** verifica che un nickname non sia utilizzato */
     const EXISTS_NICKNAME = 'NickName'; 
     /** verifica che una mail non sia utilizzata */
