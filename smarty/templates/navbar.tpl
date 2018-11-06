@@ -14,12 +14,12 @@
 				<ul class="nav navbar-nav navbar-right">
 					{if $uType eq 'guest'}
 					<!-- Se Visitatore -->
-					<!--<li><a href="#sfoglia">SFOGLIA</a></li>-->
+					<!-- <li><a href="#sfoglia">SFOGLIA</a></li> !-->
 					<li><a href="#forum">FORUM</a></li>
 					<li><a href="/videoteca-project/user/login">ACCEDI</a></li>
 					<li><a href="/videoteca-project/user/signup">REGISTRATI</a></li>
 				    {else}
-					<!--<li><a href="#sfoglia">SFOGLIA</a></li>-->
+					<!--<li><a href="#sfoglia">SFOGLIA</a></li> 
 				    <!-- Se utente loggato 
 					<li><a href="/deepmusic/user/profile/{$uId}"><span class="glyphicon glyphicon-user"></span> {$uName}'s Account </a></li> 
 					{if $uType eq 'moderator'}

@@ -36,7 +36,14 @@ a { color: blue;}
         font-family: "Georgia", Monaco, monospace; 
 	font-size: 18px;
 }
-
+.squared
+{
+	border-radius:5px;
+}
+.circled
+{
+	border-radius:100px;
+}
 .well a {  color: #1E90FF; }
 
 #important

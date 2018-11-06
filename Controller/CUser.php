@@ -45,6 +45,60 @@ class CUser
             header('Location: Invalid HTTP method detected');
     }
     
+	/**
+     * La funzione mostra il profilo di un utente. A seconda del tipo di URL, saranno visualizzati contenuti differenti.
+     * In particolare:
+     *  - /videoteca-project/user/profile/id mostra la pagina base: per un musicista mostra la lista delle canzoni, per gli altri utenti un messaggio di benvenuto
+     *  - /videoteca-project/user/profile/id&following mostra la lista dei following dell'utente
+     * @param $string l'argomento della url. se non specificato, si viene reindirizzati ad una pagina di errore.
+     */
+    static function profile($id, $content = null)
+    {
+        $vUser = new VUser();
+        $loggedUser = CSession::getUserFromSession();
+        if($_SERVER['REQUEST_METHOD']=='GET')
+        {
+            if ($id) // se l'url ha almeno l'id si procede
+            {
+                if (is_numeric($id)) // se effettivamente la variabile id corrisponde ad un numero
+                {
+                    // si effettua il caricamento dell'utente
+                    $profileUser = FPersistantManager::getInstance()->load(EUser::class, $id);
+                    
+                    if ($profileUser) // se l'utente esiste...
+                    {
+                        $listafilm = false; // bool che denota se l'utente della sessione ha film in lista
+                        
+                                         
+                        $array = NULL; // array contenente i dati dell'utente da visualizzare
+                        
+
+                        if ($content == 'listafilm') // se il parametro e' following
+                        { // si carica la lista dei following del profilo utente
+                            $array = FPersistantManager::getInstance()->load(EUser::class, $profileUser->getId(), FTarget::LOAD_FILMLIST);
+                            $content = 'Listafilm';
+                        }
+
+                        else // se il contenuto non e' specificato, e' stato inserito solo l'id e quindi si visualizza la pagina base
+                        {
+								$array = FPersistantManager::getInstance()->load(EUser::class, $profileUser->getId(), FTarget::LOAD_FILMLIST);
+								$content = 'Listafilm';
+						}                       
+                        $vUser->showProfile($profileUser, $loggedUser, $content, $array); // mostra il profilo
+                    } 
+                    else
+                        $vUser->showErrorPage($loggedUser, 'The user id doesn\'t match any DeepMusic\'s user!');
+                } 
+                else
+                    $vUser->showErrorPage($loggedUser, 'The URL is invalid!');
+            } 
+            else
+                $vUser->showErrorPage($loggedUser, 'The URL is invalid!');
+        } 
+        else
+            $vUser->showErrorPage($loggedUser, 'The URL has too few arguments');
+    }
+	
 	
     /*Effettua il logout.*/
     static function logout()

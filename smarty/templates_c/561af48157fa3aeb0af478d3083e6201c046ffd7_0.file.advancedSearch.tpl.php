@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-11-05 12:19:53
+/* Smarty version 3.1.32, created on 2018-11-06 01:15:59
   from 'D:\xampp\htdocs\videoteca-project\smarty\templates\search\advancedSearch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5be02759329b96_53806357',
+  'unifunc' => 'content_5be0dd3f909377_80221664',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '561af48157fa3aeb0af478d3083e6201c046ffd7' => 
     array (
       0 => 'D:\\xampp\\htdocs\\videoteca-project\\smarty\\templates\\search\\advancedSearch.tpl',
-      1 => 1541416779,
+      1 => 1541463357,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5be02759329b96_53806357 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be0dd3f909377_80221664 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Ricerca avanzata</title>
+<title>Ricerca</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -56,7 +56,7 @@ function content_5be02759329b96_53806357 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 	
 		<div class="container col-xs-12 col-sm-6 col-sm-offset-3 well text-center">
-			<h2>Ricerca avanzata</h2>
+			<h2>Ricerca</h2>
 			<hr>
 			<!-- Sezione di immissione dati !-->
 			<form class="form-vertical col-sm-offset-2 col-sm-8 ricercaavanzata" action="/videoteca-project/search/advanced">

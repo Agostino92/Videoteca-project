@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Ricerca avanzata</title>
+<title>Ricerca</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -25,7 +25,7 @@
 	{include file="navbar.tpl"}
 	
 		<div class="container col-xs-12 col-sm-6 col-sm-offset-3 well text-center">
-			<h2>Barra di Ricerca</h2>
+			<h2>Ricerca</h2>
 			<hr>
 			<!-- Sezione di immissione dati !-->
 			<form class="form-vertical col-sm-offset-2 col-sm-8 ricercaavanzata" action="/videoteca-project/search/advanced">
@@ -46,7 +46,7 @@
 				
 				<!-- Genere di ricerca (valore) !-->
 				<div class="form-group">
-					<label for="search">In base a cosa lo stai cercando? </br> PS. Puoi cercare utenti solo tramite nome!</label>
+					<label for="search">In base a cosa lo stai cercando? </br> PS Puoi cercare utenti solo tramite nome!</label>
 					<select id="inputKey" class="form-control" name="value">
 						<option value="genre" selected>Genere</option>
 						<option value="name">Nome</option>
