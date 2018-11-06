@@ -81,7 +81,7 @@ class CUser
 
                         else // se il contenuto non e' specificato, e' stato inserito solo l'id e quindi si visualizza la pagina base
                         {
-								$array = FPersistantManager::getInstance()->load(EUser::class, $profileUser->getId(), FTarget::LOAD_FILMLIST);
+								$array = FPersistantManager::getInstance()->load(EUser::class, $profileUser->getId(), FTarget::LOAD_FOLLOWING);
 								$content = 'Listafilm';
 						}                       
                         $vUser->showProfile($profileUser, $loggedUser, $content, $array); // mostra il profilo
