@@ -37,7 +37,7 @@ require_once 'Foundation/FFilm.php';
 require_once 'Foundation/FUser.php';
 require_once 'Foundation/FUserInfo.php';
 //require_once 'Foundation/FReport.php';
-require_once 'Foundation/FFollower.php';*/
+require_once 'Foundation/FFollower.php';
 require_once 'Foundation/FPersistantManager.php';
 
 ?>
