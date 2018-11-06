@@ -32,6 +32,8 @@ class FTarget
     const EXISTS_USER = 'User';
     /** verifica che un utente che segue il film non esiste già */
 	const EXISTS_FOLLOWER = 'Follower';
+	/** caricamento dei film di un utente*/
+	const LOAD_FOLLOWING = 'Following';
 
     
 }
